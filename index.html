@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Portfolio</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+
+    <!-- Section d'accueil -->
+    <header>
+        <div class="container">
+            <img src="./assets/images/profile-pic.png" alt="Ma photo" class="profile-photo">
+            <h1>Bienvenue sur mon portfolio</h1>
+            <h2>Développeur full stack.</h2>
+            <!-- <a href="#projets" class="button">Voir mes projets</a> -->
+        </div>
+    </header>
+
+    <section id="description">
+        <div class="container">
+            <h2>Qui suis-je ?</h2>
+            <p>Je suis un développeur full stack passionné par la création de projets divers.</p> 
+            <p>J'ai commencé à coder il y a 1 an et demi lorsque j'ai intégrer l'école Zone01 et j'ai travaillé sur de nombreux projets depuis.</p>
+            <p>Je suis spécialisé dans le développement back-end et front-end.</p>
+            <p>Voici quelques langages et technologies avec lesquelles je travaille :</p>
+            <ul>
+                <li><a href="https://developer.mozilla.org/" target="_blank"> HTML & CSS</a></li>
+                <li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript" target="_blank">JavaScript</a></li>
+                <li><a href="https://go.dev/" target="_blank">Golang</a></li>
+                <li><a href="https://www.rust-lang.org/" target="_blank">Rust</a></li>
+                <li><a href="https://www.python.org/" target="_blank">Python</a></li>
+                <li><a href="https://sql.sh/" target="_blank">SQL</a></li>
+            </ul>
+            <ul>
+                <li><a href="https://code.visualstudio.com/" target="_blank">VsCode</a></li>
+                <li><a href="https://www.docker.com/" target="_blank">Docker</a></li>
+                <li><a href="https://git-scm.com/" target="_blank">Git</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Section Projets -->
+    <section id="projets">
+        <div class="container">
+            <h2>Mes projets</h2>
+            <div class="projects">
+                <div class="project">
+                    <h3>Projet 1</h3>
+                    <p>Description de votre projet ici.</p>
+                    <a href="#">Voir le projet</a>
+                </div>
+                <div class="project">
+                    <h3>Projet 2</h3>
+                    <p>Description de votre projet ici.</p>
+                    <a href="#">Voir le projet</a>
+                </div>
+                <div class="project">
+                    <h3>Projet 3</h3>
+                    <p>Description de votre projet ici.</p>
+                    <a href="#">Voir le projet</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Contact -->
+    <section id="contact">
+        <div class="container">
+            <h2>Contactez-moi</h2>
+            <p>Envoyez-moi un message pour discuter de collaborations ou simplement dire bonjour !</p>
+            <form action="#">
+                <label for="name">Nom</label>
+                <input type="text" id="name" required>
+                <label for="email">Email</label>
+                <input type="email" id="email" required>
+                <label for="message">Message</label>
+                <textarea id="message" rows="5" required></textarea>
+                <button type="submit">Envoyer</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Mon Portfolio - Tous droits réservés</p>
+    </footer>
+
+</body>
+</html>
