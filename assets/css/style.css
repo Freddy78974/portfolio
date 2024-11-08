@@ -138,6 +138,7 @@ header p {
     background-color: #0000002a;
     color : #fff;
     cursor: pointer;
+    border: #f4f4f4 solid 2px;
     a {
         color: #fff;
     }
@@ -183,6 +184,7 @@ header p {
 .project:hover {
     background-color: #0000002a;
     color : rgb(255, 255, 255);
+    border: #f4f4f4 solid 2px;
     /* cursor: pointer; */
     h3 {
         color: rgb(51, 51, 51,0);
