@@ -16,19 +16,34 @@ body {
 
 /* Style de la photo de profil */
 .profile-photo {
-    width: 400px;                /* Ajuste la taille de l'image */
+    width: 20vw;                  /* Taille de l'image relative à la largeur de l'écran */
+    max-width: 500px;             /* Taille maximale pour les grands écrans */
     height: auto;
-    border-radius: 50%;          /* Bordure arrondie pour effet circulaire */
-    position: absolute;          /* Positionne l'image en haut à gauche */
-    top: 20px;                   /* Espace depuis le haut de la fenêtre */
-    left: 20px;                  /* Espace depuis la gauche de la fenêtre */
+    border-radius: 50%;           /* Bordure arrondie pour effet circulaire */
+    position: absolute;           /* Positionne l'image en haut à gauche */
+    top: 20px;                    /* Espace depuis le haut de la fenêtre */
+    left: 20px;                   /* Espace depuis la gauche de la fenêtre */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre pour effet de relief */
 }
 
-/* Ajustement pour éviter que le texte chevauche l'image */
-#description .container {
-    padding-top: 50px; /* Espace supplémentaire en haut pour éviter le chevauchement */
-    position: relative; /* Nécessaire pour que l'image se positionne par rapport à la fenêtre */
+/* Media query pour écrans plus petits (tablettes et téléphones) */
+@media (max-width: 768px) {
+    .profile-photo {
+        width: 30vw;             /* Taille ajustée pour les écrans plus petits */
+        max-width: 100px;        /* Taille maximale pour les écrans mobiles */
+        top: 10px;
+        left: 10px;
+    }
+}
+
+/* Media query pour très petits écrans (téléphones en mode portrait) */
+@media (max-width: 480px) {
+    .profile-photo {
+        width: 35vw;             /* Taille encore plus petite pour les petits écrans */
+        max-width: 80px;         /* Limite de la taille de l'image */
+        top: 5px;
+        left: 5px;
+    }
 }
 
 
