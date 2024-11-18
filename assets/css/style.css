@@ -16,21 +16,30 @@ body {
 
 /* Style de la photo de profil */
 .profile-photo {
-    width: 20vw;                  /* Taille de l'image relative à la largeur de l'écran */
-    max-width: 500px;             /* Taille maximale pour les grands écrans */
+    width: 20vw;
+    /* Taille de l'image relative à la largeur de l'écran */
+    max-width: 500px;
+    /* Taille maximale pour les grands écrans */
     height: auto;
-    border-radius: 50%;           /* Bordure arrondie pour effet circulaire */
-    position: absolute;           /* Positionne l'image en haut à gauche */
-    top: 20px;                    /* Espace depuis le haut de la fenêtre */
-    left: 20px;                   /* Espace depuis la gauche de la fenêtre */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre pour effet de relief */
+    border-radius: 50%;
+    /* Bordure arrondie pour effet circulaire */
+    position: absolute;
+    /* Positionne l'image en haut à gauche */
+    top: 20px;
+    /* Espace depuis le haut de la fenêtre */
+    left: 20px;
+    /* Espace depuis la gauche de la fenêtre */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
+    /* Ombre pour effet de relief */
 }
 
 /* Media query pour écrans plus petits (tablettes et téléphones) */
 @media (max-width: 768px) {
     .profile-photo {
-        width: 30vw;             /* Taille ajustée pour les écrans plus petits */
-        max-width: 100px;        /* Taille maximale pour les écrans mobiles */
+        width: 30vw;
+        /* Taille ajustée pour les écrans plus petits */
+        max-width: 100px;
+        /* Taille maximale pour les écrans mobiles */
         top: 10px;
         left: 10px;
     }
@@ -39,15 +48,14 @@ body {
 /* Media query pour très petits écrans (téléphones en mode portrait) */
 @media (max-width: 480px) {
     .profile-photo {
-        width: 35vw;             /* Taille encore plus petite pour les petits écrans */
-        max-width: 80px;         /* Limite de la taille de l'image */
+        width: 35vw;
+        /* Taille encore plus petite pour les petits écrans */
+        max-width: 80px;
+        /* Limite de la taille de l'image */
         top: 5px;
         left: 5px;
     }
 }
-/*Bonjour, ceci est un virus. Vous devriez verrouiller votre pc..... pardon, MAC avant de partir
-Des bisous,
-Un*/
 
 /* Section d'accueil */
 header {
@@ -64,7 +72,8 @@ header h1 {
 }
 
 header p {
-    font-size: 1.2rem;
+    margin-top: 20px;
+    font-size: 1.5rem;
 }
 
 .button {
@@ -85,7 +94,7 @@ header p {
 /* Section Qui suis-je */
 #description {
     padding: 50px 20px;
-    background-color:rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.5);
     text-align: center;
 }
 
@@ -104,14 +113,15 @@ header p {
 
 #description p {
     font-size: 1.1rem;
-    color:#fff;
+    color: #fff;
     margin-bottom: 20px;
     line-height: 1.8;
 }
 
 /* Style de la liste des technologies */
 #description ul {
-    list-style-type: none; /* Retire les puces */
+    list-style-type: none;
+    /* Retire les puces */
     padding: 0;
     margin-top: 20px;
     display: flex;
@@ -138,9 +148,10 @@ header p {
 
 #description ul li:hover {
     background-color: #0000002a;
-    color : #fff;
+    color: #fff;
     cursor: pointer;
     border: #f4f4f4 solid 2px;
+
     a {
         color: #fff;
     }
@@ -159,12 +170,15 @@ header p {
     padding: 50px 20px;
     background-color: rgba(0, 0, 0, 0.5);
     text-align: center;
-    color:#fff;
+    color: #fff;
 }
 
 #projets h2 {
     font-size: 2rem;
+    color: #fff;
     margin-bottom: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
 }
 
 .projects {
@@ -174,7 +188,7 @@ header p {
 }
 
 .project {
-    background-color: rgb(255, 255, 255,0.9);
+    background-color: rgb(255, 255, 255, 0.9);
     padding: 20px;
     margin: 10px;
     width: 300px;
@@ -185,15 +199,18 @@ header p {
 
 .project:hover {
     background-color: #0000002a;
-    color : rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
     border: #f4f4f4 solid 2px;
+
     /* cursor: pointer; */
     h3 {
-        color: rgb(51, 51, 51,0);
+        color: rgb(51, 51, 51, 0);
     }
+
     p {
-        color: rgb(102, 102, 102,0);
+        color: rgb(102, 102, 102, 0);
     }
+
     a {
         color: #fff;
     }
@@ -212,9 +229,41 @@ header p {
 .project a {
     display: inline-block;
     margin-top: 10px;
-    color: rgb(255, 255, 255,0);
+    color: rgb(255, 255, 255, 0);
     text-decoration: none;
     font-weight: bold;
+}
+
+/* Section Liens-top */
+#Liens-top {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    /* background-color: rgb(51, 51, 51, 0.8); */
+}
+
+.photo-github-top {
+    width: 4vw;
+    /* Taille de l'image relative à la largeur de l'écran */
+    max-width: 30px;
+    /* Taille maximale pour les grands écrans */
+    height: auto;
+    margin-top: 20px;
+    margin-right: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Ombre pour effet de relief */
+}
+
+.photo-gitea-top {
+    width: 4vw;
+    /* Taille de l'image relative à la largeur de l'écran */
+    max-width: 30px;
+    /* Taille maximale pour les grands écrans */
+    height: auto;
+    margin-top: 20px;
+    margin-right: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Ombre pour effet de relief */
 }
 
 /* Section Contact */
@@ -234,8 +283,9 @@ header p {
     margin-bottom: 20px;
     font-size: 1.1rem;
 }
+
 #contact a {
-    color : #fff;
+    color: #fff;
     margin-bottom: 20px;
     font-size: 1.1rem;
     text-decoration: none;
@@ -277,7 +327,7 @@ button:hover {
     background-color: #f4f4f4;
 }
 
-#Liens {
+#Liens-bottom {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -285,18 +335,37 @@ button:hover {
 }
 
 .Liens a {
-    color : #fff;
+    color: #fff;
     margin-bottom: 20px;
+    margin-right: 20px;
     font-size: 1.1rem;
     text-decoration: none;
+    transition: background-color 0.3s ease;
 }
 
-.photo-liens {
-    width: 2vw;                  /* Taille de l'image relative à la largeur de l'écran */
-    max-width: 500px;             /* Taille maximale pour les grands écrans */
+.photo-github-bottom {
+    width: 3vw;
+    /* Taille de l'image relative à la largeur de l'écran */
+    max-width: 20px;
+    /* Taille maximale pour les grands écrans */
     height: auto;
-    margin-top: 20px;                    /* Espace depuis le haut de la fenêtre */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre pour effet de relief */
+    margin-top: 20px;
+    margin-right: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Ombre pour effet de relief */
+}
+
+.photo-gitea-bottom {
+    width: 4vw;
+    /* Taille de l'image relative à la largeur de l'écran */
+    max-width: 30px;
+    /* Taille maximale pour les grands écrans */
+    height: auto;
+    margin-top: 20px;
+    margin-right: 5px;
+    /* Espace depuis le haut de la fenêtre */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Ombre pour effet de relief */
 }
 
 /* Pied de page */
