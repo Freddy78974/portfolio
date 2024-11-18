@@ -234,6 +234,12 @@ header p {
     margin-bottom: 20px;
     font-size: 1.1rem;
 }
+#contact a {
+    color : #fff;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    text-decoration: none;
+}
 
 form {
     max-width: 500px;
@@ -269,6 +275,29 @@ button {
 
 button:hover {
     background-color: #f4f4f4;
+}
+
+#Liens {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: #222;
+}
+
+.Liens a {
+    color : #fff;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    text-decoration: none;
+}
+
+.photo-liens {
+    width: 2vw;                  /* Taille de l'image relative à la largeur de l'écran */
+    max-width: 500px;             /* Taille maximale pour les grands écrans */
+    height: auto;
+    top: 20px;                    /* Espace depuis le haut de la fenêtre */
+    right: 20px;                   /* Espace depuis la gauche de la fenêtre */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre pour effet de relief */
 }
 
 /* Pied de page */
