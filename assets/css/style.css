@@ -1,4 +1,4 @@
-/* Reset CSS */
+/* Reset CSS global */
 * {
     margin: 0;
     padding: 0;
@@ -6,12 +6,21 @@
     font-family: Arial, sans-serif;
 }
 
+/* S'assurer que le html et body prennent toute la hauteur et largeur de la fenêtre */
+html, body {
+    height: 100%; /* 100% de la hauteur de la fenêtre */
+    width: 100%;  /* 100% de la largeur de la fenêtre */
+    margin: 0;    /* Supprime les marges */
+    padding: 0;   /* Supprime les padding */
+}
+
 /* Style global */
 body {
     line-height: 1.6;
     background-image: url('../images/code-binaire.png');
-    background-size: cover;
     font-family: Arial, sans-serif;
+    background-size:cover;
+    overflow-x:hidden; /* Empêche le défilement horizontal */        
 }
 
 .container-right {
@@ -42,18 +51,17 @@ body {
 
 /* Style pour l'effet de texte */
 .typing-effect {
-    height: 183px;
+    height: 325px;
     font-weight: bold;
-    white-space: nowrap;
     /* Empêche la coupure de ligne */
-    overflow: hidden;
+    white-space: nowrap;
     /* Cache le texte en dehors du conteneur */
-    border-right: 2px solid #333;
-
-    /* Style pour H1 et H2 */
+    overflow: hidden;
+    /* Style pour H1 et H2 et p */
     h1,
-    h2 {
-        white-space: normal;
+    h2,
+    p {
+        white-space: pre-line;
         /* Autorise les retours à la ligne automatiques */
         word-wrap: break-word;
         /* Coupe les mots si nécessaire */
@@ -70,6 +78,10 @@ body {
     h2 {
         font-size: 24px;
     }
+    p {
+        font-size: 18px;
+    }
+
 }
 
 /* Responsive pour les petits écrans */
@@ -83,6 +95,11 @@ body {
         font-size: 20px;
         /* Réduction de la taille de la police sur mobile */
     }
+
+    p {
+        font-size: 16px;
+        /* Réduction de la taille de la police sur mobile */
+    }
 }
 
 @media (max-width: 480px) {
@@ -94,6 +111,10 @@ body {
     h2 {
         font-size: 18px;
     }
+
+    p {
+        font-size: 14px;
+    }
 }
 
 /* Style de la photo de profil */
@@ -104,11 +125,11 @@ body {
     max-width: 500px;
     /* Taille maximale pour les grands écrans */
     height: auto;
-    border-radius: 50%;
     /* Bordure arrondie pour effet circulaire */
-    position: absolute;
+    border-radius: 50%;
+    /* position: absolute; */
     /* Positionne l'image en haut à gauche */
-    top: 20px;
+    margin-top: -120px;
     /* Espace depuis le haut de la fenêtre */
     left: 20px;
     /* Espace depuis la gauche de la fenêtre */
@@ -143,21 +164,10 @@ body {
     }
 }
 
-.cv-photo {
-    margin-top: 20px;
-    margin-left: 30px;
-    /* Taille de l'image relative à la largeur de l'écran */
-    width: 5vw;
-    height: 6vw;
-    /* Taille maximale pour les grands écrans */
-    max-width: 500px;
-}
-
-
 /* Section d'accueil */
 header {
     color: #fff;
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.5);
     -webkit-text-stroke: 1px;
     -webkit-text-stroke-color: black;
     padding: 100px 20px;
@@ -185,7 +195,7 @@ header h1 {
 
 /* Section Qui suis-je */
 #description {
-    padding: 50px 20px;
+    padding: 10px 20px;
     background-color: rgba(0, 0, 0, 0.5);
     text-align: center;
 }
@@ -259,7 +269,7 @@ header h1 {
 
 /* Section Projets */
 #projets {
-    padding: 50px 20px;
+    padding: 90px 20px;
     background-color: rgba(0, 0, 0, 0.5);
     text-align: center;
     color: #fff;
@@ -334,34 +344,10 @@ header h1 {
     /* background-color: rgb(51, 51, 51, 0.8); */
 }
 
-.photo-github-top {
-    width: 4vw;
-    /* Taille de l'image relative à la largeur de l'écran */
-    max-width: 30px;
-    /* Taille maximale pour les grands écrans */
-    height: auto;
-    margin-top: 20px;
-    margin-right: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    /* Ombre pour effet de relief */
-}
-
-.photo-gitea-top {
-    width: 4vw;
-    /* Taille de l'image relative à la largeur de l'écran */
-    max-width: 30px;
-    /* Taille maximale pour les grands écrans */
-    height: auto;
-    margin-top: 20px;
-    margin-right: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    /* Ombre pour effet de relief */
-}
-
 /* Section Contact */
 #contact {
     padding: 50px 20px;
-    background-color: rgb(51, 51, 51, 0.8);
+    background-color: #222;
     color: #fff;
     text-align: center;
 }
@@ -434,8 +420,23 @@ button:hover {
     text-decoration: none;
     transition: background-color 0.3s ease;
 }
+#cv {
+    padding: 90px 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    text-align: center;
+    color: #fff;
+}
 
-.photo-github-bottom {
+.cv-photo {
+    margin-top: 20px;
+    /* Taille de l'image relative à la largeur de l'écran */
+    width: 5vw;
+    height: 6vw;
+    /* Taille maximale pour les grands écrans */
+    max-width: 500px;
+}
+
+.photo-github {
     width: 3vw;
     /* Taille de l'image relative à la largeur de l'écran */
     max-width: 20px;
@@ -447,7 +448,7 @@ button:hover {
     /* Ombre pour effet de relief */
 }
 
-.photo-gitea-bottom {
+.photo-gitea {
     width: 4vw;
     /* Taille de l'image relative à la largeur de l'écran */
     max-width: 30px;
@@ -468,3 +469,4 @@ footer {
     color: #fff;
     font-size: 0.9rem;
 }
+

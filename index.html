@@ -13,25 +13,23 @@
 
     <!-- Section d'accueil -->
     <header>
-        <div class="typing-effect" id="typing-effect">
-            <h1 id="typing-effect-h1"></h1>
-            <h2 id="typing-effect-h2"></h2>
-            <script src="./js/effet_print.js"></script>
-        </div>
-        <div class="container-photo">
-            <img src="./assets/images/profile-pic.png" alt="Ma photo" class="profile-photo">
+        <div class="container-right">
+            <div class="typing-effect" id="typing-effect">
+                <h1 id="typing-effect-h1"></h1>
+                <h2 id="typing-effect-h2"></h2>
+            </div>
+            <div class="container-photo">
+                <img src="./assets/images/profile-pic.png" alt="Ma photo" class="profile-photo">
+            </div>
         </div>
     </header>
 
     <section id="description">
-        <div class="container-right">
+        <div class="container-left">
             <h2>Qui suis-je ?</h2>
-            <p>Je suis un développeur full stack passionné par la création de projets divers.</p>
-            <p>J'ai commencé à coder il y a 1 an et demi lorsque j'ai intégrer l'école Zone01
-                et j'ai travaillé sur de nombreux projets depuis.
-                Je suis spécialisé dans le développement back-end et front-end.</p>
-            <p>Voici quelques langages et technologies avec lesquelles je travaille :</p>
-        </div>
+            <div class="typing-effect" id="typing-effect">
+                <p id="typing-effect-p"></p>
+            </div>
     </section>
 
     <section id="description">
@@ -82,32 +80,25 @@
         <section id="Liens-top">
             <div class="Liens">
                 <a href="https://github.com/Freddy78974" target="_blank"><img
-                        src="./assets/images/github-mark-white.png" class="photo-github-top">GitHub</a>
+                        src="./assets/images/github-mark-white.png" class="photo-github">GitHub</a>
                 <a href="https://zone01normandie.org/git/njeanfre" target="_blank"><img
-                        src="./assets/images/Gitea-Logo.wine.png" class="photo-gitea-top">Gitéa</a>
+                        src="./assets/images/Gitea-Logo.wine.png" class="photo-gitea">Gitéa</a>
             </div>
         </section>
     </section>
 
-    <!-- Section Projets -->
-    <section id="projets">
+    <!-- Section cv -->
+    <section id="cv">
         <div class="container-left">
             <h2>CV</h2>
             <p>
                 Vous pouvez consulter mon cv dés à présent
             </p>
+            <a href="./assets/documents/CV GitHub.pdf" target="_blank">
+                <img src="./assets/images/cv.png" alt="Cv" class="cv-photo" href="./assets/documents/cv.pdf">
+            </a>
         </div>
-        <!-- Liens-top -->
-        <section id="Liens-top">
-            <div class="Liens">
-                <a href="./assets/documents/CV GitHub.pdf" target="_blank">
-                    <img src="./assets/images/cv.png" alt="Cv" class="cv-photo" href="./assets/documents/cv.pdf">
-                </a>
-            </div>
-        </section>
     </section>
-
-
 
 
     <!-- Section Contact -->
@@ -131,15 +122,17 @@
     <section id="Liens-bottom">
         <div class="Liens">
             <a href="https://github.com/Freddy78974"><img src="./assets/images/github-mark-white.png"
-                    class="photo-github-bottom">GitHub</a>
+                    class="photo-github">GitHub</a>
             <a href="https://zone01normandie.org/git/njeanfre"><img src="./assets/images/Gitea-Logo.wine.png"
-                    class="photo-gitea-bottom">Gitéa</a>
+                    class="photo-gitea">Gitéa</a>
         </div>
     </section>
 
     <!-- Lien vers les scripts externe -->
     <script src="./js/contact.js"></script>
     <script src="./js/effet_scroll.js"></script>
+    <script src="./js/effet_print.js"></script>
+
 
     <footer>
         <p>&copy; 2024 Mon Portfolio - Tous droits réservés</p>

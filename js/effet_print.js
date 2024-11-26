@@ -1,76 +1,38 @@
-// // Texte à afficher
-// const text = "Bienvenue sur mon portfolio";
 
-// // Paramètres
-// const typingSpeed = 100; // Vitesse d'écriture en millisecondes
+  // Textes à afficher
+  const textH1 = "Bienvenue sur mon portfolio"; // Texte pour le H1
+  const textH2 = "Développeur full stack\nJe m'appelle Jean-Frédéric Nangy"; // Texte pour le H2
+  const textP = "Je suis un développeur full stack passionné par la création de projets divers.\nJ'ai commencé à coder il y a 1 an et demi lorsque j'ai intégré l'école Zone01\net j'ai travaillé sur de nombreux projets depuis.\nJe suis spécialisé dans le développement back-end et front-end.\nVoici quelques langages et technologies avec lesquelles je travaille :";
 
-// // Cible le conteneur
-// const typingEffectElement = document.getElementById("typing-effect");
+  // Paramètres
+  const typingSpeed = 15; // Vitesse d'écriture en millisecondes
 
-// // Fonction pour afficher le texte progressivement
-// let index = 0;
+  // Cible les éléments HTML
+  const typingEffectH1 = document.getElementById("typing-effect-h1");
+  const typingEffectH2 = document.getElementById("typing-effect-h2");
+  const typingEffectP = document.getElementById("typing-effect-p");
 
-// // function typeText() {
-// //   if (index < text.length) {
-// //     typingEffectElement.textContent += text.charAt(index); // Ajoute un caractère
-// //     index++;
-// //     setTimeout(typeText, typingSpeed); // Continue l'animation
-// //   }
-// // }
-
-// // Lance l'effet
-// // typeText();
-
-// const texts = ["Bienvenue sur mon portfolio", "Développeur full stack"];
-// let textIndex = 0;
-
-// function typeDynamicText() {
-//   if (index < texts[textIndex].length) {
-//     typingEffectElement.textContent += texts[textIndex].charAt(index);
-//     index++;
-//     setTimeout(typeDynamicText, typingSpeed);
-//   } else {
-//     setTimeout(() => {
-//       typingEffectElement.textContent = "";
-//       index = 0;
-//       textIndex = (textIndex + 1) % texts.length; // Passer au texte suivant
-//       typeDynamicText();
-//     }, 1000); // Pause avant de recommencer
-//   }
-// }
-
-// typeDynamicText();
+  // Fonction pour afficher progressivement le texte
+  function typeText(element, text, callback) {
+    let index = 0;
+    element.textContent = ""; // Efface le texte existant avant de commencer
 
 
-// Textes à afficher
-const textH1 = "Bienvenue sur mon portfolio"; // Texte pour le H1
-const textH2 = "Développeur full stack"; // Texte pour le H2
-
-// Paramètres
-const typingSpeed = 100; // Vitesse d'écriture en millisecondes
-
-// Cible les éléments HTML
-const typingEffectH1 = document.getElementById("typing-effect-h1");
-const typingEffectH2 = document.getElementById("typing-effect-h2");
-
-// Fonction pour afficher progressivement le texte
-function typeText(element, text, callback) {
-  let index = 0;
-
-  function type() {
-    if (index < text.length) {
-      element.textContent += text.charAt(index); // Ajoute un caractère
-      index++;
-      setTimeout(type, typingSpeed); // Continue l'animation
-    } else if (callback) {
-      callback(); // Appelle la fonction suivante si elle existe
+    function type() {
+      if (index < text.length) {
+        element.textContent += text.charAt(index); // Ajoute un caractère
+        index++;
+        setTimeout(type, typingSpeed); // Continue l'animation
+      } else if (callback) {
+        callback(); // Appelle la fonction suivante si elle existe
+      }
     }
+    type();
   }
 
-  type();
-}
-
-// Lance l'effet d'écriture pour H1, puis H2
-typeText(typingEffectH1, textH1, () => {
-  typeText(typingEffectH2, textH2); // Lance le texte H2 après H1
-});
+  // Lance l'effet d'écriture pour H1, puis H2
+  typeText(typingEffectH1, textH1, () => {
+    typeText(typingEffectH2, textH2, () => {
+      typeText(typingEffectP, textP);
+    });
+  });
