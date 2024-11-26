@@ -8,7 +8,7 @@ document.getElementById('contact-form').addEventListener('submit', function(even
     var message = document.getElementById('message').value;
 
     // Créer l'URL mailto
-    var subject = encodeURIComponent('Nouveau message de ' + name);
+    var subject = encodeURIComponent('Nouveau message de ' + name + ' via le formulaire de contact Portefolio');
     var body = encodeURIComponent('Nom: ' + name + '\nEmail: ' + email + '\n\nMessage:\n' + message);
 
     // Construire le lien mailto

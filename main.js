@@ -1,6 +1,6 @@
-const http = require('http');
-const fs = require('fs');
-const path = require('path');
+import { createServer } from 'http';
+import { access, constants, readFile } from 'fs';
+import { join, extname } from 'path';
 
 // Configuration du serveur
 const hostname = '127.0.0.1';
@@ -27,18 +27,18 @@ function getContentType(ext) {
 }
 
 // Création du serveur
-const server = http.createServer((req, res) => {
+const server = createServer((req, res) => {
     // Définir le chemin vers le fichier demandé
-    const filePath = path.join(__dirname, req.url === '/' ? 'index.html' : req.url);
+    const filePath = join(__dirname, req.url === '/' ? 'index.html' : req.url);
 
     // Obtenir l'extension du fichier
-    const ext = path.extname(filePath);
+    const ext = extname(filePath);
 
     // Définir le type de contenu
     const contentType = getContentType(ext);
 
     // Vérifier si le fichier demandé existe
-    fs.access(filePath, fs.constants.F_OK, (err) => {
+    access(filePath, constants.F_OK, (err) => {
         if (err) {
             // Si le fichier n'existe pas, retourner une erreur 404
             res.statusCode = 404;
@@ -46,7 +46,7 @@ const server = http.createServer((req, res) => {
             res.end('Erreur 404 : Fichier non trouvé');
         } else {
             // Lire et retourner le fichier
-            fs.readFile(filePath, (err, content) => {
+            readFile(filePath, (err, content) => {
                 if (err) {
                     // Si une erreur se produit lors de la lecture du fichier
                     res.statusCode = 500;
