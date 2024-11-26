@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const sections = document.querySelectorAll(".container");
+    const sections = document.querySelectorAll(".container-right");
   
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   
 document.addEventListener("DOMContentLoaded", () => {
-    const sections = document.querySelectorAll(".container-photo");
+    const sections = document.querySelectorAll(".container-left");
   
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
