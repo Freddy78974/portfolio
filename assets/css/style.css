@@ -17,16 +17,12 @@ body {
     /* Supprime les marges */
     padding: 0;
     /* Supprime les padding */
-}
-
-/* Style global */
-body {
-    line-height: 1.6;
-    background-image: url('../images/code-binaire.png');
-    font-family: Arial, sans-serif;
-    background-size: cover;
     overflow-x: hidden;
-    /* Empêche le défilement horizontal */
+    background-color: rgba(0, 0, 0, 0.5);
+    background-image: url('../images/code-binaire.png');
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
 }
 
 .container-right {
