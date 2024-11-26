@@ -30,6 +30,7 @@ body {
 /* Style pour l'effet de texte */
 .typing-effect {
     height: 183px;
+    margin-left: 100px;
     font-weight: bold;
     white-space: nowrap;
     /* Empêche la coupure de ligne */
@@ -83,8 +84,22 @@ body {
     }
 }
 
+.container-photo {
+    opacity: 0;
+    transform: translateY(10px);
+    /* Décalage initial vers le bas */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    will-change: opacity, transform;
+}
+
+.container-photo.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 /* Style de la photo de profil */
 .profile-photo {
+    
     width: 20vw;
     /* Taille de l'image relative à la largeur de l'écran */
     max-width: 500px;
