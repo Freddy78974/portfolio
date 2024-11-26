@@ -4,7 +4,7 @@
   const textH2 = "Développeur full stack\nJe m'appelle Jean-Frédéric Nangy"; // Texte pour le H2
 
   // Paramètres
-  const typingSpeed = 15; // Vitesse d'écriture en millisecondes
+  const typingSpeed = 50; // Vitesse d'écriture en millisecondes
 
   // Cible les éléments HTML
   const typingEffectH1 = document.getElementById("typing-effect-h1");
