@@ -7,11 +7,16 @@
 }
 
 /* S'assurer que le html et body prennent toute la hauteur et largeur de la fenêtre */
-html, body {
-    height: 100%; /* 100% de la hauteur de la fenêtre */
-    width: 100%;  /* 100% de la largeur de la fenêtre */
-    margin: 0;    /* Supprime les marges */
-    padding: 0;   /* Supprime les padding */
+html,
+body {
+    height: 100%;
+    /* 100% de la hauteur de la fenêtre */
+    width: 100%;
+    /* 100% de la largeur de la fenêtre */
+    margin: 0;
+    /* Supprime les marges */
+    padding: 0;
+    /* Supprime les padding */
 }
 
 /* Style global */
@@ -19,13 +24,14 @@ body {
     line-height: 1.6;
     background-image: url('../images/code-binaire.png');
     font-family: Arial, sans-serif;
-    background-size:cover;
-    overflow-x:hidden; /* Empêche le défilement horizontal */        
+    background-size: cover;
+    overflow-x: hidden;
+    /* Empêche le défilement horizontal */
 }
 
 .container-right {
     opacity: 0;
-    transform: translateX(100px);
+    transform: translateX(50px);
     /* Décalage initial vers le bas */
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
     will-change: opacity, transform;
@@ -38,7 +44,7 @@ body {
 
 .container-left {
     opacity: 0;
-    transform: translateX(-100px);
+    transform: translateX(-50px);
     /* Décalage initial vers le bas */
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
     will-change: opacity, transform;
@@ -51,16 +57,16 @@ body {
 
 /* Style pour l'effet de texte */
 .typing-effect {
-    height: 325px;
+    height: 328px;
     font-weight: bold;
     /* Empêche la coupure de ligne */
     white-space: nowrap;
     /* Cache le texte en dehors du conteneur */
     overflow: hidden;
+
     /* Style pour H1 et H2 et p */
     h1,
-    h2,
-    p {
+    h2 {
         white-space: pre-line;
         /* Autorise les retours à la ligne automatiques */
         word-wrap: break-word;
@@ -78,10 +84,6 @@ body {
     h2 {
         font-size: 24px;
     }
-    p {
-        font-size: 18px;
-    }
-
 }
 
 /* Responsive pour les petits écrans */
@@ -95,11 +97,6 @@ body {
         font-size: 20px;
         /* Réduction de la taille de la police sur mobile */
     }
-
-    p {
-        font-size: 16px;
-        /* Réduction de la taille de la police sur mobile */
-    }
 }
 
 @media (max-width: 480px) {
@@ -111,15 +108,11 @@ body {
     h2 {
         font-size: 18px;
     }
-
-    p {
-        font-size: 14px;
-    }
 }
 
 /* Style de la photo de profil */
 .profile-photo {
-    
+
     width: 20vw;
     /* Taille de l'image relative à la largeur de l'écran */
     max-width: 500px;
@@ -129,15 +122,14 @@ body {
     border-radius: 50%;
     /* position: absolute; */
     /* Positionne l'image en haut à gauche */
-    margin-top: -120px;
+    margin-top: 20px;
     /* Espace depuis le haut de la fenêtre */
-    left: 20px;
+    /* left: 20px; */
     /* Espace depuis la gauche de la fenêtre */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
     /* Ombre pour effet de relief */
     translate: 0.3s ease;
 }
-
 
 
 /* Media query pour écrans plus petits (tablettes et téléphones) */
@@ -420,6 +412,7 @@ button:hover {
     text-decoration: none;
     transition: background-color 0.3s ease;
 }
+
 #cv {
     padding: 90px 20px;
     background-color: rgba(0, 0, 0, 0.5);
@@ -469,4 +462,3 @@ footer {
     color: #fff;
     font-size: 0.9rem;
 }
-
