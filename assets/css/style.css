@@ -29,22 +29,59 @@ body {
 
 /* Style pour l'effet de texte */
 .typing-effect {
+    height: 183px;
     font-weight: bold;
-    white-space: nowrap; /* Empêche la coupure de ligne */
-    overflow: hidden; /* Cache le texte en dehors du conteneur */
-    border-right: 2px solid #333; /* Curseur clignotant */
-    animation: blink-cursor 0.7s steps(2) infinite;
-  }
-  
-  /* Animation pour le curseur clignotant */
-  @keyframes blink-cursor {
-    0%, 100% {
-      border-color: transparent;
+    white-space: nowrap;
+    /* Empêche la coupure de ligne */
+    overflow: hidden;
+    /* Cache le texte en dehors du conteneur */
+    border-right: 2px solid #333;
+
+    /* Style pour H1 et H2 */
+    h1,
+    h2 {
+        white-space: normal;
+        /* Autorise les retours à la ligne automatiques */
+        word-wrap: break-word;
+        /* Coupe les mots si nécessaire */
+        overflow: visible;
+        /* Permet au texte de s'adapter sans être coupé */
+        margin: 10px auto;
+        /* Espace entre les titres et centrage */
     }
-    50% {
-      border-color: #333;
+
+    h1 {
+        font-size: 36px;
     }
-  }
+
+    h2 {
+        font-size: 24px;
+    }
+}
+
+/* Responsive pour les petits écrans */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 28px;
+        /* Réduction de la taille de la police sur mobile */
+    }
+
+    h2 {
+        font-size: 20px;
+        /* Réduction de la taille de la police sur mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 22px;
+        /* Encore plus petit pour les très petits écrans */
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+}
 
 /* Style de la photo de profil */
 .profile-photo {
@@ -100,9 +137,6 @@ body {
     height: 6vw;
     /* Taille maximale pour les grands écrans */
     max-width: 500px;
-    /* min-width: 10px; */
-    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 1); */
-    /* Ombre pour effet de relief */
 }
 
 
