@@ -103,6 +103,5 @@ out/
 *.tsbuildinfo
 
 # Exceptions (à garder)
-*.png
 !.env.example
 !.env.template
