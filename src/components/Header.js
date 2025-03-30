@@ -1,6 +1,6 @@
 import styles from '../styles/Header.module.css';
 import useTypingEffect from '../hooks/useTypingEffect';
-import profileImage from '../public/assets/images/IMG_4674.png';
+import profileImage from '../../public/assets/images/IMG_4674.png';
 
 
 export default function Header() {
