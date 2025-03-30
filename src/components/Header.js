@@ -20,7 +20,7 @@ export default function Header() {
         </div>
         <div className={styles.profileContainer}>
           <img
-            src={isProd ? `/portfolio${profileImage.src}` : profileImage.src}
+            src={isProd ? `/portfolio/${profileImage.src}` : profileImage.src}
             alt="Photo de profil"
             className={styles.profilePhoto}
             loading="lazy"
