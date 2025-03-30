@@ -6,8 +6,8 @@
         "dev": "next dev",
         "start": "next start",
         "server": "node server.js",
-        "build": "next build && next export",
-        "deploy": "gh-pages -d out"
+        "build": "next build",
+        "deploy": "gh-pages -d out -t true"
     },
     "dependencies": {
         "express": "^4.18.2",
