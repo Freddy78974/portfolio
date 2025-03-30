@@ -1,23 +1,10 @@
-/** @type {import('next').NextConfig} */
+const isProd = process.env.NODE_ENV === 'production'
 const nextConfig = {
-    reactStrictMode: true,
-    images: {
-      domains: [],
-    },
-    // Configuration pour les assets statiques
-    async headers() {
-      return [
-        {
-          source: '/assets/:path*',
-          headers: [
-            {
-              key: 'Cache-Control',
-              value: 'public, max-age=31536000, immutable',
-            },
-          ],
-        },
-      ];
-    },
-  };
-  
-  module.exports = nextConfig;
+  output: 'export', // Génère des fichiers statiques
+  assetPrefix: isProd ? '/portfolio/' : '', 
+  images: {
+    unoptimized: true // Désactive l'optimisation pour l'export
+  }
+}
+
+module.exports = nextConfig
