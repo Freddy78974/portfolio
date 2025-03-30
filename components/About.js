@@ -1,5 +1,5 @@
-import useScrollAnimation from '../hooks/useScrollAnimation';
-import styles from '../styles/About.module.css';
+import useScrollAnimation from '../src/hooks/useScrollAnimation';
+import styles from '../src/styles/About.module.css';
 
 export default function About() {
   useScrollAnimation('.container-left, .container-right', 0.1);

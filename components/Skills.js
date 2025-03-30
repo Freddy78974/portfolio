@@ -1,4 +1,4 @@
-import styles from '../styles/Skills.module.css';
+import styles from '../src/styles/Skills.module.css';
 
 const skills = [
   { name: "HTML & CSS", url: "https://developer.mozilla.org/" },

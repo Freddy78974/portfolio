@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import styles from '../styles/Contact.module.css';
+import styles from '../src/styles/Contact.module.css';
 
 export default function ContactForm() {
   const formRef = useRef(null);

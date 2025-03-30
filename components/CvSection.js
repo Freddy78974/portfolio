@@ -1,4 +1,4 @@
-import styles from '../styles/Cv.module.css';
+import styles from '../src/styles/Cv.module.css';
 
 export default function CvSection() {
   return (
