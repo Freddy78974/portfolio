@@ -1,0 +1,63 @@
+/* Conserve votre style original en ajoutant : */
+/* Ajoutez ceci */
+body {
+  color: white !important;
+}
+
+h1, h2, h3, h4, h5, h6, p, li, a {
+  color: inherit !important;
+}
+
+/* Conservez votre fond */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    linear-gradient(rgba(0, 0, 0, 0.7), 
+    rgba(0, 0, 0, 0.7)),
+    url('/assets/images/code-binaire.png') center/cover no-repeat;
+  z-index: -1;
+}
+
+header {
+  padding: 4rem 1rem !important; /* Conserve plus d'espace seulement pour le header */
+}
+
+section {
+  position: relative;
+  z-index: 1;
+  padding: 3rem 1rem !important; /* Réduit de 4rem à 3rem */
+  min-height: auto !important; /* Supprime la hauteur fixe */
+  background-color: transparent !important;
+}
+
+.container-left, .container-right {
+  padding: 1.5rem 0 !important;
+}
+
+/* Nouveaux styles Apple-like */
+:root {
+  --apple-font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell;
+  --apple-ease: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --apple-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+body {
+  font-family: var(--apple-font);
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+h1, h2, h3 {
+  font-weight: 600;
+  letter-spacing: -0.5px;
+}
+
+/* Effets de transition Apple */
+.button, .skillItem, .project {
+  transition: all 0.3s var(--apple-ease);
+}

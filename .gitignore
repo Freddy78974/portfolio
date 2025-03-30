@@ -1,1 +1,107 @@
-***.DS_Store
+# Fichiers système macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+.Spotlight-V100
+.Trashes
+._*
+
+# Fichiers temporaires
+*.swp
+*.swo
+*~
+~$*
+
+# Dossiers système
+.DocumentRevisions-V100
+.fseventsd
+.SavedState
+.TemporaryItems
+
+# Dependencies
+node_modules/
+.next/
+.out/
+dist/
+
+# Environnements
+.env*
+.env.local
+.env.development
+.env.test
+.env.production
+.env*.local
+
+# Cache et logs
+.cache/
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# IDE
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Debug
+debug/
+*.pid
+
+# Tests
+coverage/
+.nyc_output/
+*.lcov
+
+# Build
+build/
+.next-build/
+.next-cache/
+
+# Packages
+*.tgz
+
+# macOS
+*.icloud
+
+# Visual Studio Code
+.history/
+*.code-workspace
+
+# Système
+Thumbs.db
+ehthumbs.db
+[Dd]esktop.ini
+
+# Debugger
+.vscode/launch.json
+
+# Next.js
+.next/
+out/
+
+# Production
+.cache-loader
+
+# Dépendances
+.jest_cache/
+.yarn-integrity
+
+# Environnements de développement
+.env
+.env.development.local
+.env.test.local
+.env.production.local
+
+# TypeScript
+*.tsbuildinfo
+
+# Exceptions (à garder)
+!.env.example
+!.env.template
