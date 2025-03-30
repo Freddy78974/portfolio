@@ -1,10 +1,10 @@
 import styles from '../src/styles/Header.module.css';
 import useTypingEffect from '../src/hooks/useTypingEffect';
-import profileImage from '../public/assets/images/IMG_4674.png';
-
+import profileImage from '/assets/images/IMG_4674.png';
 
 export default function Header() {
   const isProd = process.env.NODE_ENV === 'production';
+  const basePath = isProd ? '/portfolio' : '';
 
   useTypingEffect([
     { id: 'typing-effect-h1', text: 'Bienvenue sur mon portfolio' },
@@ -20,7 +20,7 @@ export default function Header() {
         </div>
         <div className={styles.profileContainer}>
           <img
-            src={isProd ? `/portfolio/${profileImage.src}` : profileImage.src}
+            src={`${basePath}${profileImage.src}`} 
             alt="Photo de profil"
             className={styles.profilePhoto}
             loading="lazy"
