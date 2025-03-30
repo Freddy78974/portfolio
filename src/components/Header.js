@@ -1,7 +1,11 @@
 import styles from '../styles/Header.module.css';
 import useTypingEffect from '../hooks/useTypingEffect';
+import profileImage from '../public/assets/images/IMG_4674.png';
+
 
 export default function Header() {
+  const isProd = process.env.NODE_ENV === 'production';
+
   useTypingEffect([
     { id: 'typing-effect-h1', text: 'Bienvenue sur mon portfolio' },
     { id: 'typing-effect-h2', text: 'Développeur full stack\nJe m\'appelle Jean-Frédéric Nangy' }
@@ -15,9 +19,9 @@ export default function Header() {
           <h2 id="typing-effect-h2" className={styles.subtitle} style={{ color: 'white' }}></h2>
         </div>
         <div className={styles.profileContainer}>
-          <img 
-            src="/assets/images/IMG_4674.png" 
-            alt="Photo de profil" 
+          <img
+            src={isProd ? `/portfolio${profileImage.src}` : profileImage.src}
+            alt="Photo de profil"
             className={styles.profilePhoto}
             loading="lazy"
           />
