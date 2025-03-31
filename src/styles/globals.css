@@ -1,5 +1,7 @@
-/* Conserve votre style original en ajoutant : */
-/* Ajoutez ceci */
+:root {
+  --bg-image: url('/assets/images/code-binaire.png');
+}
+
 body {
   color: white !important;
 }
@@ -19,7 +21,7 @@ body::before {
   background: 
     linear-gradient(rgba(0, 0, 0, 0.7), 
     rgba(0, 0, 0, 0.7)),
-    url('/assets/images/code-binaire.png') center/cover no-repeat;
+    var(--bg-image) center/cover no-repeat;
   z-index: -1;
 }
 
