@@ -24,6 +24,17 @@ function MyApp({ Component, pageProps }) {
     }
   }, []);
 
+  function MyApp({ Component, pageProps }) {
+    useEffect(() => {
+      if (process.env.NODE_ENV === 'production') {
+        document.documentElement.style.setProperty(
+          '--bg-image',
+          'url("assets/images/code-binaire.png")'
+        )
+      }
+    }, []);
+  }
+
   return (
     <>
       <Head>
