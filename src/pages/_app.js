@@ -1,4 +1,4 @@
-import '../styles/globals.css';
+import styles from '../styles/globals.css';
 import Head from 'next/head';
 import { useEffect } from 'react';
 
@@ -24,16 +24,16 @@ function MyApp({ Component, pageProps }) {
     }
   }, []);
 
-  function MyApp({ Component, pageProps }) {
-    useEffect(() => {
-      if (process.env.NODE_ENV === 'production') {
-        document.documentElement.style.setProperty(
-          '--bg-image',
-          'url("assets/images/code-binaire.png")'
-        )
-      }
-    }, []);
-  }
+  // function MyApp({ Component, pageProps }) {
+  //   useEffect(() => {
+  //     if (process.env.NODE_ENV === 'production') {
+  //       document.documentElement.style.setProperty(
+  //         '--bg-image',
+  //         'url("assets/images/code-binaire.png")'
+  //       )
+  //     }
+  //   }, []);
+  // }
 
   return (
     <>
@@ -41,21 +41,16 @@ function MyApp({ Component, pageProps }) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="description" content="Portfolio de Jean-Frédéric Nangy - Développeur Full Stack" />
       </Head>
-      
-      {/* Image de fond */}
-      {/* <div className="background-wrapper" style={{
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        width: '100vw',
-        height: '100vh',
-        background: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(${bgImagePath}) center/cover no-repeat`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
-        zIndex: -1
-      }}></div> */}
-      
+
+      {/* Image de fond fixe qui couvre toute la page */}
+      <div className="background-fixed">
+        <img
+          src="assets/images/code-binaire.png"
+          alt="Background"
+          className="background-image"
+        />
+      </div>
+
       <Component {...pageProps} />
     </>
   );
