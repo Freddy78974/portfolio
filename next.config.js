@@ -5,7 +5,8 @@ const nextConfig = {
   basePath: isProd ? '/portfolio' : '', // Remplacez par votre nom de dépôt
   assetPrefix: isProd ? '/portfolio/' : '',
   images: {
-    unoptimized: true
+    unoptimized: true,
+    domains: [],
   },
   trailingSlash: true // Recommandé pour GitHub Pages
 }
