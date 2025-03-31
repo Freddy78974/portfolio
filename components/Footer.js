@@ -1,6 +1,8 @@
 import styles from '../src/styles/Footer.module.css';
 
 const Footer = () => {
+  const imagePath = 'assets/images/github-mark-white.png';
+  const imagePath2 = 'assets/images/Gitea-Logo.wine.png';
   return (
     <footer className={styles.footer}>
       <div className={styles.footerContent}>
@@ -12,7 +14,7 @@ const Footer = () => {
             className={styles.socialLink}
           >
             <img 
-              src="/assets/images/github-mark-white.png" 
+              src={imagePath}
               alt="GitHub" 
               className={styles.socialIcon}
             />
@@ -25,7 +27,7 @@ const Footer = () => {
             className={styles.socialLink}
           >
             <img 
-              src="/assets/images/Gitea-Logo.wine.png" 
+              src={imagePath2}
               alt="Gitea" 
               className={styles.socialIcon}
             />
