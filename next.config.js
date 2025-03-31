@@ -3,7 +3,7 @@ const isProd = process.env.NODE_ENV === 'production'
 const nextConfig = {
   output: 'export', // Remplace next export
   basePath: isProd ? '/portfolio' : '', // Remplacez par votre nom de dépôt
-  assetPrefix: isProd ? '/portfolio/' : '',
+  assetPrefix: isProd ? '/portfolio' : '',
   images: {
     unoptimized: true,
     domains: [],

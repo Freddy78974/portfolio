@@ -4,7 +4,6 @@ import useTypingEffect from '../src/hooks/useTypingEffect';
 export default function Header() {
   const imagePath = '/assets/images/IMG_4674.png';
 
-
   useTypingEffect([
     { id: 'typing-effect-h1', text: 'Bienvenue sur mon portfolio' },
     { id: 'typing-effect-h2', text: 'Développeur full stack\nJe m\'appelle Jean-Frédéric Nangy' }
