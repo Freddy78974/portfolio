@@ -2,7 +2,7 @@ import styles from '../src/styles/Header.module.css';
 import useTypingEffect from '../src/hooks/useTypingEffect';
 
 export default function Header() {
-  const imagePath = 'assets/images/IMG_4674.png';
+  const imagePath = 'assets/images/IMG_4674.jpg';
 
   useTypingEffect([
     { id: 'typing-effect-h1', text: 'Bienvenue sur mon portfolio' },
