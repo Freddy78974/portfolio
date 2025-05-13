@@ -14,7 +14,8 @@ export default function ContactForm() {
     const message = formData.get('message');
   
     const subject = encodeURIComponent(`Nouveau message de ${name} via le formulaire de contact`);
-    const body = encodeURIComponent(message);
+    const body = encodeURIComponent(`${message}\n\nVous pouvez me contacter à ${email}`);
+
   
     window.location.href = `mailto:nangy.pro@gmail.com?subject=${subject}&body=${body}`;
   
