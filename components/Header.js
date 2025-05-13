@@ -13,8 +13,20 @@ export default function Header() {
     <header className={styles.header}>
       <div className={`${styles.container} ${styles.right}`}>
         <div className={styles.typingEffect}>
-          <h1 id="typing-effect-h1" className={styles.title} style={{ color: 'white' }}></h1>
-          <h2 id="typing-effect-h2" className={styles.subtitle} style={{ color: 'white' }}></h2>
+          <h1 
+          data-testid="typing-effect-h1" 
+          id="typing-effect-h1" 
+          className={styles.title} 
+          style={{ color: 'white' }}
+          >
+          </h1>
+          <h2 
+          data-testid="typing-effect-h2" 
+          id="typing-effect-h2" 
+          className={styles.subtitle} 
+          style={{ color: 'white' }}
+          >
+          </h2>
         </div>
         <div className={styles.profileContainer}>
           <img

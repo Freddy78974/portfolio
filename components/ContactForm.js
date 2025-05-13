@@ -6,23 +6,21 @@ export default function ContactForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
-    const name = e.target.name.value;
-    const email = e.target.email.value;
-    const message = e.target.message.value;
-
+  
+    const formData = new FormData(e.target);
+  
+    const name = formData.get('name');
+    const email = formData.get('email');
+    const message = formData.get('message');
+  
     const subject = encodeURIComponent(`Nouveau message de ${name} via le formulaire de contact`);
-    const body = encodeURIComponent(
-      `Nom: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
-    );
-
-    window.location.href = `mailto:nangy.pro@gmail.com?subject=${subject}&body=${body}`;
-    
-    // Réinitialiser le formulaire sans recharger
+    const body = encodeURIComponent(message);
+  
+    window.location.href = `mailto:contact@example.com?subject=${subject}&body=${body}`;
+  
+    // Réinitialiser le formulaire
     setTimeout(() => {
-      if (formRef.current) {
-        formRef.current.reset();
-      }
+      e.target.reset();
     }, 1000);
   };
 
@@ -36,6 +34,7 @@ export default function ContactForm() {
       <form 
         ref={formRef}
         id="contact-form" 
+        data-testid="contact-form"
         className={styles.contactForm}
         onSubmit={handleSubmit}
       >
