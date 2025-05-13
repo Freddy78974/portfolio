@@ -16,7 +16,7 @@ export default function ContactForm() {
     const subject = encodeURIComponent(`Nouveau message de ${name} via le formulaire de contact`);
     const body = encodeURIComponent(message);
   
-    window.location.href = `mailto:contact@example.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:nangy.pro@gmail.com?subject=${subject}&body=${body}`;
   
     // Réinitialiser le formulaire
     setTimeout(() => {
