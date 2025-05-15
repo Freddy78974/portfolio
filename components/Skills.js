@@ -27,6 +27,7 @@ export default function Skills() {
               target="_blank"
               rel="noopener noreferrer"
               className={styles.skillItem}
+              data-testid="skill-item"
             >
               {skill.name}
             </a>
