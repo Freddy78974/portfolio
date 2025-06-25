@@ -40,5 +40,8 @@
         "msw": "^2.2.14",
         "postcss": "^8.4.23",
         "tailwindcss": "^3.3.2"
+    },
+    "overrides": {
+        "tar-fs": "^3.0.9"
     }
 }
