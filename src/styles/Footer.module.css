@@ -1,49 +1,77 @@
 .footer {
-    background-color: #222;
-    color: white;
-    padding: 40px 20px;
-    text-align: center;
-  }
-  
-  .footerContent {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
-  }
-  
-  .socialLinks {
-    display: flex;
-    gap: 30px;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-  
-  .socialLink {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    color: white;
-    text-decoration: none;
-    transition: opacity 0.3s ease;
-  }
-  
-  .socialLink:hover {
-    opacity: 0.8;
-  }
-  
-  .socialIcon {
-    width: 24px;
-    height: 24px;
-    object-fit: contain;
-  }
-  
-  .copyright {
-    font-size: 0.9rem;
-    opacity: 0.7;
-  }
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(20, 20, 40, 0.95) 100%);
+  backdrop-filter: blur(20px);
+  color: white;
+  padding: 4rem 2rem 2rem;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 2px;
+  background: linear-gradient(135deg, #00d2ff, #3a7bd5);
+}
+
+.footerContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+}
+
+.socialLinks {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.socialLink {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.5rem;
+  color: white;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  font-weight: 500;
+}
+
+.socialLink:hover {
+  background: rgba(255, 255, 255, 0.12);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(0, 210, 255, 0.3);
+  border-color: rgba(0, 210, 255, 0.4);
+}
+
+.socialIcon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  filter: brightness(1.2);
+}
+
+.copyright {
+  font-size: 1rem;
+  opacity: 0.7;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
   
   @media (max-width: 768px) {
     .footer {

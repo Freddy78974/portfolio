@@ -6,8 +6,40 @@
   color: white !important;
 } */
 
+/* Nouveaux styles modernes */
+:root {
+  --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --secondary-gradient: linear-gradient(135deg, #00d2ff 0%, #3a7bd5 100%);
+  --accent-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --glass-bg: rgba(255, 255, 255, 0.1);
+  --glass-border: rgba(255, 255, 255, 0.2);
+  --shadow-primary: 0 8px 32px rgba(31, 38, 135, 0.37);
+  --shadow-glow: 0 0 40px rgba(0, 210, 255, 0.3);
+  --modern-font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --transition-smooth: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --border-radius: 16px;
+}
+
+body {
+  font-family: var(--modern-font);
+  font-weight: 300;
+  line-height: 1.6;
+  color: white !important;
+  scroll-behavior: smooth;
+  overflow-x: hidden; /* Empêche le défilement horizontal */
+}
+
 h1, h2, h3, h4, h5, h6, p, li, a {
   color: inherit !important;
+}
+
+h1, h2, h3 {
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  background: linear-gradient(135deg, #ffffff 0%, #e0e6ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 /* Conservez votre fond */
@@ -95,40 +127,320 @@ h1, h2, h3, h4, h5, h6, p, li, a {
 
 header {
   padding: 4rem 1rem !important; /* Conserve plus d'espace seulement pour le header */
+  position: relative;
 }
 
-section {
+/* Exclure le header du style automatique des sections */
+section:not(header) {
   position: relative;
   z-index: 1;
-  padding: 3rem 1rem !important; /* Réduit de 4rem à 3rem */
-  min-height: auto !important; /* Supprime la hauteur fixe */
+  padding: 4rem 1rem !important;
+  min-height: auto !important;
   background-color: transparent !important;
+  margin: 3rem 0 !important;
+}
+
+/* Effet glassmorphism moderne pour les sections (sauf header) - DÉSACTIVÉ POUR TEST */
+/* section:not(header)::before {
+  content: '';
+  position: absolute;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 1200px;
+  height: calc(100% - 2rem);
+  background: var(--glass-bg);
+  backdrop-filter: blur(25px);
+  border-radius: 24px;
+  border: 1px solid var(--glass-border);
+  box-shadow: 
+    0 12px 40px rgba(31, 38, 135, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  z-index: -1;
+  opacity: 0.9;
+  transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+} */
+
+/* Bordure lumineuse animée pour les sections visibles */
+/* Container fixe pour l'effet KITT - sections et éléments spécifiques */
+.kitt-border {
+  position: absolute;
+  top: calc(1rem - 2px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(90% + 4px);
+  max-width: calc(1200px + 4px);
+  height: calc(100% - 2rem + 4px);
+  border-radius: 26px;
+  z-index: -2;
+  opacity: 0;
+  transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  overflow: hidden;
+  pointer-events: none;
+  /* Masque pour ne montrer que les bords */
+  mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  mask-composite: xor;
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  padding: 2px;
+}
+
+/* Style pour l'effet KITT global englobant photo et texte */
+.kitt-border-global {
+  position: absolute;
+  top: -25px;
+  left: -25px;
+  width: calc(100% + 50px);
+  height: calc(100% + 50px);
+  border-radius: 45px;
+  z-index: 0;
+  opacity: 1 !important; /* Force la visibilité pour debug */
+  transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  overflow: hidden;
+  pointer-events: none;
+  /* Masque pour ne montrer que les bords */
+  mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  mask-composite: xor;
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  padding: 4px;
+}
+
+/* Version mobile de l'effet KITT - plus petite pour éviter le débordement */
+@media (max-width: 768px) {
+  .kitt-border-global {
+    top: -15px;
+    left: -15px;
+    width: calc(100% + 30px);
+    height: calc(100% + 30px);
+    border-radius: 30px;
+    padding: 3px;
+  }
+}
+
+/* Activation de l'effet KITT global */
+[class*="container"][class*="right"].section-visible .kitt-border-global,
+.section-visible .kitt-border-global {
+  opacity: 1;
+}
+
+/* Premier trait lumineux - Première moitié du cercle */
+.kitt-light-1 {
+  position: absolute;
+  top: -100%;
+  left: -100%;
+  width: 300%;
+  height: 300%;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0%,
+    transparent 85%,
+    rgba(0, 123, 255, 0.2) 87%,
+    rgba(0, 123, 255, 0.6) 89%,
+    rgba(0, 123, 255, 1) 90%,
+    rgba(0, 123, 255, 1) 92%,
+    rgba(0, 123, 255, 0.6) 94%,
+    rgba(0, 123, 255, 0.2) 96%,
+    transparent 98%,
+    transparent 180deg,
+    transparent 100%
+  );
+  animation: kittSpin1 3s linear infinite;
+}
+
+/* Deuxième trait lumineux - Deuxième moitié du cercle (opposée) */
+.kitt-light-2 {
+  position: absolute;
+  top: -100%;
+  left: -100%;
+  width: 300%;
+  height: 300%;
+  background: conic-gradient(
+    from 180deg,
+    transparent 0%,
+    transparent 85%,
+    rgba(255, 69, 0, 0.2) 87%,
+    rgba(255, 69, 0, 0.6) 89%,
+    rgba(255, 69, 0, 1) 90%,
+    rgba(255, 69, 0, 1) 92%,
+    rgba(255, 69, 0, 0.6) 94%,
+    rgba(255, 69, 0, 0.2) 96%,
+    transparent 98%,
+    transparent 100%
+  );
+  animation: kittSpin1 3s linear infinite;
+}
+
+/* Animation unique pour les deux traits - même rotation */
+@keyframes kittSpin1 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Ajustements mobiles pour les traits lumineux */
+@media (max-width: 768px) {
+  .kitt-light-1,
+  .kitt-light-2 {
+    width: 250%; /* Réduit la taille sur mobile */
+    height: 250%;
+    top: -75%;
+    left: -75%;
+  }
+  
+  .kitt-light,
+  .kitt-light-section-2 {
+    width: 250%; /* Réduit la taille sur mobile pour les sections aussi */
+    height: 250%;
+    top: -75%;
+    left: -75%;
+  }
+}
+
+/* Anciens styles à supprimer */
+
+/* Anciens styles à supprimer */
+
+/* Activation de l'effet KITT quand visible - sections uniquement */
+.section-visible .kitt-border {
+  opacity: 1;
+}
+
+/* Suppression des anciens styles du header */
+
+/* Élément lumineux qui tourne à l'intérieur du container fixe - pour les sections */
+/* Premier trait lumineux pour les sections - traits très longs */
+.kitt-light {
+  position: absolute;
+  top: -100%;
+  left: -100%;
+  width: 300%;
+  height: 300%;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0%,
+    transparent 65%,
+    rgba(0, 123, 255, 0.1) 68%,
+    rgba(0, 123, 255, 0.2) 72%,
+    rgba(0, 123, 255, 0.4) 76%,
+    rgba(0, 123, 255, 0.6) 80%,
+    rgba(0, 123, 255, 0.8) 85%,
+    rgba(0, 123, 255, 1) 90%,
+    rgba(0, 123, 255, 1) 92%,
+    rgba(0, 123, 255, 0.8) 95%,
+    rgba(0, 123, 255, 0.6) 98%,
+    rgba(0, 123, 255, 0.4) 99%,
+    rgba(0, 123, 255, 0.2) 99.5%,
+    transparent 100%
+  );
+  animation: kittSpin 3s linear infinite;
+}
+
+/* Deuxième trait lumineux pour les sections - traits très longs */
+/* .kitt-light-section-2 {
+  position: absolute;
+  top: -100%;
+  left: -100%;
+  width: 300%;
+  height: 300%;
+  background: conic-gradient(
+    from 180deg,
+    transparent 0%,
+    transparent 65%,
+    rgba(255, 69, 0, 0.1) 68%,
+    rgba(255, 69, 0, 0.2) 72%,
+    rgba(255, 69, 0, 0.4) 76%,
+    rgba(255, 69, 0, 0.6) 80%,
+    rgba(255, 69, 0, 0.8) 85%,
+    rgba(255, 69, 0, 1) 90%,
+    rgba(255, 69, 0, 1) 92%,
+    rgba(255, 69, 0, 0.8) 95%,
+    rgba(255, 69, 0, 0.6) 98%,
+    rgba(255, 69, 0, 0.4) 99%,
+    rgba(255, 69, 0, 0.2) 99.5%,
+    transparent 100%
+  );
+  animation: kittSpin 3s linear infinite;
+} */
+
+/* Animation fluide pour les sections - rotation uniquement de l'élément lumineux */
+@keyframes kittSpin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Effet supplémentaire sur la carte glassmorphism quand visible - DÉSACTIVÉ POUR TEST */
+/* section.section-visible:not(header)::before {
+  box-shadow: 
+    0 12px 40px rgba(31, 38, 135, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 0 60px rgba(0, 216, 255, 0.15);
+} */
+
+/* Première et dernière section sans marge */
+section:first-of-type:not(header) {
+  margin-top: 0 !important;
+}
+
+section:last-of-type {
+  margin-bottom: 0 !important;
 }
 
 .container-left, .container-right {
-  padding: 1.5rem 0 !important;
+  padding: 2rem 0 !important;
 }
 
-/* Nouveaux styles Apple-like */
-:root {
-  --apple-font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell;
-  --apple-ease: cubic-bezier(0.25, 0.1, 0.25, 1);
-  --apple-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+/* Classes utilitaires modernes */
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--shadow-primary);
+  transition: var(--transition-smooth);
 }
 
-body {
-  font-family: var(--apple-font);
-  font-weight: 300;
-  line-height: 1.5;
-  color: white !important;
+.glass-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-primary), var(--shadow-glow);
 }
 
-h1, h2, h3 {
+.gradient-text {
+  background: var(--secondary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.modern-button {
+  background: var(--primary-gradient);
+  border: none;
+  border-radius: 12px;
+  padding: 1rem 2rem;
+  color: white;
   font-weight: 600;
-  letter-spacing: -0.5px;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  box-shadow: var(--shadow-primary);
 }
 
-/* Effets de transition Apple */
-.button, .skillItem, .project {
-  transition: all 0.3s var(--apple-ease);
+.modern-button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-primary), var(--shadow-glow);
 }
