@@ -1,7 +1,12 @@
-import { useEffect } from 'react';
+import { useEffect, useLayoutEffect } from 'react';
+
+// Evite un flash du texte statique (SEO/no-JS) avant que l'animation ne démarre :
+// useLayoutEffect s'exécute avant que le navigateur ne peigne l'écran.
+const useIsomorphicLayoutEffect =
+  typeof window !== 'undefined' ? useLayoutEffect : useEffect;
 
 export default function useTypingEffect(texts, speed = 50) {
-  useEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     const elements = texts.map(t => document.getElementById(t.id));
     
     // Effacer tout contenu existant immédiatement

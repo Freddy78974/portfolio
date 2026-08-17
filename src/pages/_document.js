@@ -6,9 +6,6 @@ export default function Document() {
       <Head>
         <meta charSet="utf-8" />
         <link rel="icon" href="/favicon.ico" />
-        <style>{`
-          @import url('https://fonts.googleapis.com/css2?family=Arial:wght@400;700&display=swap');
-        `}</style>
       </Head>
       <body>
         <Main />
