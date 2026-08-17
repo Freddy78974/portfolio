@@ -3,9 +3,9 @@ describe('Navigation Portfolio', () => {
         cy.visit('/');
     });
 
-    it('Doit naviguer vers la section Compétences', () => {
-        cy.get('nav a[href="#skills"]').click();
-        cy.get('#skills').should('be.visible');
+    it('Doit naviguer vers la section Profil', () => {
+        cy.get('nav a[href="#profil"]').click();
+        cy.get('#profil').should('be.visible');
         cy.contains('HTML & CSS').should('exist');
     });
 

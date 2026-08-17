@@ -1,36 +1,34 @@
 :root {
-  --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  --secondary-gradient: linear-gradient(135deg, #00d2ff 0%, #3a7bd5 100%);
-  --accent-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  --glass-bg: rgba(255, 255, 255, 0.1);
-  --glass-border: rgba(255, 255, 255, 0.2);
-  --shadow-primary: 0 8px 32px rgba(31, 38, 135, 0.37);
-  --shadow-glow: 0 0 40px rgba(0, 210, 255, 0.3);
-  --modern-font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  --transition-smooth: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  --border-radius: 16px;
+  --bg: #0a0f1a;
+  --panel: #101828;
+  --panel-raised: #131c2e;
+  --border: rgba(150, 170, 210, 0.22);
+  --border-soft: rgba(150, 170, 210, 0.12);
+  --text: #e6eaf3;
+  --muted: #7c8aa8;
+  --accent: #ff6a2b;
+  --accent-dim: #c2551f;
+  --accent-soft: rgba(255, 106, 43, 0.12);
+  --font-sans: -apple-system, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", "Cascadia Code", "Source Code Pro", Menlo, Consolas, monospace;
+  --transition-smooth: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --radius: 10px;
 }
 
+* { box-sizing: border-box; }
+
 body {
-  font-family: var(--modern-font);
-  font-weight: 300;
+  font-family: var(--font-sans);
+  font-weight: 400;
   line-height: 1.6;
-  color: white !important;
+  color: var(--text);
+  background: var(--bg);
   scroll-behavior: smooth;
-  overflow-x: hidden; /* Empêche le défilement horizontal */
+  overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6, p, li, a {
-  color: inherit !important;
-}
-
-h1, h2, h3 {
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  background: linear-gradient(135deg, #ffffff 0%, #e0e6ff 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: inherit;
 }
 
 .background-fixed {
@@ -42,304 +40,67 @@ h1, h2, h3 {
   z-index: -1;
   overflow: hidden;
   background:
-    radial-gradient(circle at 15% 20%, rgba(102, 126, 234, 0.35) 0%, transparent 45%),
-    radial-gradient(circle at 85% 15%, rgba(0, 210, 255, 0.25) 0%, transparent 40%),
-    radial-gradient(circle at 50% 95%, rgba(118, 75, 162, 0.3) 0%, transparent 50%),
-    linear-gradient(180deg, #05060f 0%, #0a0b18 50%, #05060f 100%);
+    linear-gradient(var(--border-soft) 1px, transparent 1px) 0 0/56px 56px,
+    linear-gradient(90deg, var(--border-soft) 1px, transparent 1px) 0 0/56px 56px,
+    var(--bg);
 }
 
 .background-fixed::before {
   content: '';
   position: absolute;
   inset: 0;
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
-  background-size: 48px 48px;
-  mask-image: radial-gradient(ellipse at center, black 0%, transparent 75%);
-  -webkit-mask-image: radial-gradient(ellipse at center, black 0%, transparent 75%);
+  background: radial-gradient(ellipse at 50% 0%, rgba(255, 106, 43, 0.08) 0%, transparent 55%);
 }
 
 header {
-  padding: 4rem 1rem !important; /* Conserve plus d'espace seulement pour le header */
   position: relative;
 }
 
-/* Exclure le header du style automatique des sections */
 section:not(header) {
   position: relative;
   z-index: 1;
-  padding: 4rem 1rem !important;
-  min-height: auto !important;
-  background-color: transparent !important;
-  margin: 3rem 0 !important;
+  border-top: 1px solid var(--border-soft);
 }
 
-/* Bordure lumineuse animée pour les sections visibles */
-/* Container fixe pour l'effet KITT - sections et éléments spécifiques */
-.kitt-border {
-  position: absolute;
-  top: calc(1rem - 2px);
-  left: 50%;
-  transform: translateX(-50%);
-  width: calc(90% + 4px);
-  max-width: calc(1200px + 4px);
-  height: calc(100% - 2rem + 4px);
-  border-radius: 26px;
-  z-index: -2;
+/* Apparition discrète des sections au scroll */
+.reveal {
   opacity: 0;
-  transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  overflow: hidden;
-  pointer-events: none;
-  /* Masque pour ne montrer que les bords */
-  mask: 
-    linear-gradient(#fff 0 0) content-box, 
-    linear-gradient(#fff 0 0);
-  mask-composite: xor;
-  -webkit-mask: 
-    linear-gradient(#fff 0 0) content-box, 
-    linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  padding: 2px;
+  transform: translateY(24px);
+  transition: opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-/* Style pour l'effet KITT global englobant photo et texte */
-.kitt-border-global {
-  position: absolute;
-  top: -25px;
-  left: -25px;
-  width: calc(100% + 50px);
-  height: calc(100% + 50px);
-  border-radius: 45px;
-  z-index: 0;
-  opacity: 1 !important; /* Force la visibilité pour debug */
-  transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  overflow: hidden;
-  pointer-events: none;
-  /* Masque pour ne montrer que les bords */
-  mask: 
-    linear-gradient(#fff 0 0) content-box, 
-    linear-gradient(#fff 0 0);
-  mask-composite: xor;
-  -webkit-mask: 
-    linear-gradient(#fff 0 0) content-box, 
-    linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  padding: 4px;
-}
-
-/* Version mobile de l'effet KITT - plus petite pour éviter le débordement */
-@media (max-width: 768px) {
-  .kitt-border-global {
-    top: -15px;
-    left: -15px;
-    width: calc(100% + 30px);
-    height: calc(100% + 30px);
-    border-radius: 30px;
-    padding: 3px;
-  }
-}
-
-/* Activation de l'effet KITT global */
-[class*="container"][class*="right"].section-visible .kitt-border-global,
-.section-visible .kitt-border-global {
+.reveal.section-visible {
   opacity: 1;
+  transform: translateY(0);
 }
 
-/* Premier trait lumineux - Première moitié du cercle */
-.kitt-light-1 {
-  position: absolute;
-  top: -100%;
-  left: -100%;
-  width: 300%;
-  height: 300%;
-  background: conic-gradient(
-    from 0deg,
-    transparent 0%,
-    transparent 85%,
-    rgba(0, 210, 255, 0.2) 87%,
-    rgba(0, 210, 255, 0.6) 89%,
-    rgba(0, 210, 255, 1) 90%,
-    rgba(0, 210, 255, 1) 92%,
-    rgba(0, 210, 255, 0.6) 94%,
-    rgba(0, 210, 255, 0.2) 96%,
-    transparent 98%,
-    transparent 180deg,
-    transparent 100%
-  );
-  animation: kittSpin1 3s linear infinite;
-}
-
-/* Deuxième trait lumineux - Deuxième moitié du cercle (opposée) */
-.kitt-light-2 {
-  position: absolute;
-  top: -100%;
-  left: -100%;
-  width: 300%;
-  height: 300%;
-  background: conic-gradient(
-    from 180deg,
-    transparent 0%,
-    transparent 85%,
-    rgba(118, 75, 162, 0.2) 87%,
-    rgba(118, 75, 162, 0.6) 89%,
-    rgba(118, 75, 162, 1) 90%,
-    rgba(118, 75, 162, 1) 92%,
-    rgba(118, 75, 162, 0.6) 94%,
-    rgba(118, 75, 162, 0.2) 96%,
-    transparent 98%,
-    transparent 100%
-  );
-  animation: kittSpin1 3s linear infinite;
-}
-
-/* Animation unique pour les deux traits - même rotation */
-@keyframes kittSpin1 {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
 }
 
-/* Ajustements mobiles pour les traits lumineux */
-@media (max-width: 768px) {
-  .kitt-light-1,
-  .kitt-light-2 {
-    width: 250%; /* Réduit la taille sur mobile */
-    height: 250%;
-    top: -75%;
-    left: -75%;
-  }
-  
-  .kitt-light,
-  .kitt-light-section-2 {
-    width: 250%; /* Réduit la taille sur mobile pour les sections aussi */
-    height: 250%;
-    top: -75%;
-    left: -75%;
-  }
+/* Classes utilitaires */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border: 1px solid var(--border);
+  padding: 0.35rem 0.7rem;
+  border-radius: 3px;
 }
 
-/* Activation de l'effet KITT quand visible - sections uniquement */
-.section-visible .kitt-border {
-  opacity: 1;
-}
-
-/* Élément lumineux qui tourne à l'intérieur du container fixe - pour les sections */
-/* Premier trait lumineux pour les sections - traits très longs */
-.kitt-light {
-  position: absolute;
-  top: -100%;
-  left: -100%;
-  width: 300%;
-  height: 300%;
-  background: conic-gradient(
-    from 0deg,
-    transparent 0%,
-    transparent 65%,
-    rgba(0, 210, 255, 0.1) 68%,
-    rgba(0, 210, 255, 0.2) 72%,
-    rgba(0, 210, 255, 0.4) 76%,
-    rgba(0, 210, 255, 0.6) 80%,
-    rgba(0, 210, 255, 0.8) 85%,
-    rgba(0, 210, 255, 1) 90%,
-    rgba(0, 210, 255, 1) 92%,
-    rgba(0, 210, 255, 0.8) 95%,
-    rgba(0, 210, 255, 0.6) 98%,
-    rgba(0, 210, 255, 0.4) 99%,
-    rgba(0, 210, 255, 0.2) 99.5%,
-    transparent 100%
-  );
-  animation: kittSpin 3s linear infinite;
-}
-
-/* Deuxième trait lumineux pour les sections - traits très longs */
-.kitt-light-section-2 {
-  position: absolute;
-  top: -100%;
-  left: -100%;
-  width: 300%;
-  height: 300%;
-  background: conic-gradient(
-    from 180deg,
-    transparent 0%,
-    transparent 65%,
-    rgba(118, 75, 162, 0.1) 68%,
-    rgba(118, 75, 162, 0.2) 72%,
-    rgba(118, 75, 162, 0.4) 76%,
-    rgba(118, 75, 162, 0.6) 80%,
-    rgba(118, 75, 162, 0.8) 85%,
-    rgba(118, 75, 162, 1) 90%,
-    rgba(118, 75, 162, 1) 92%,
-    rgba(118, 75, 162, 0.8) 95%,
-    rgba(118, 75, 162, 0.6) 98%,
-    rgba(118, 75, 162, 0.4) 99%,
-    rgba(118, 75, 162, 0.2) 99.5%,
-    transparent 100%
-  );
-  animation: kittSpin 3s linear infinite;
-}
-
-/* Animation fluide pour les sections - rotation uniquement de l'élément lumineux */
-@keyframes kittSpin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-/* Première et dernière section sans marge */
-section:first-of-type:not(header) {
-  margin-top: 0 !important;
-}
-
-section:last-of-type {
-  margin-bottom: 0 !important;
-}
-
-.container-left, .container-right {
-  padding: 2rem 0 !important;
-}
-
-/* Classes utilitaires modernes */
-.glass-card {
-  background: var(--glass-bg);
-  backdrop-filter: blur(20px);
-  border-radius: var(--border-radius);
-  border: 1px solid var(--glass-border);
-  box-shadow: var(--shadow-primary);
-  transition: var(--transition-smooth);
-}
-
-.glass-card:hover {
-  transform: translateY(-8px);
-  box-shadow: var(--shadow-primary), var(--shadow-glow);
-}
-
-.gradient-text {
-  background: var(--secondary-gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.modern-button {
-  background: var(--primary-gradient);
-  border: none;
-  border-radius: 12px;
-  padding: 1rem 2rem;
-  color: white;
-  font-weight: 600;
-  cursor: pointer;
-  transition: var(--transition-smooth);
-  box-shadow: var(--shadow-primary);
-}
-
-.modern-button:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-primary), var(--shadow-glow);
+.eyebrow::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background: var(--accent);
+  border-radius: 50%;
 }

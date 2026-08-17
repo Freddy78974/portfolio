@@ -5,9 +5,11 @@ export default function Projects() {
   if (projects.length === 0) return null;
 
   return (
-    <section id="projects" className={styles.projects}>
+    <section id="projects" className={`${styles.projects} reveal`}>
       <div className={styles.container}>
-        <h2 className={styles.title}>Projets</h2>
+        <div className={styles.head}>
+          <h2 className={styles.title}>Projets</h2>
+        </div>
         <div className={styles.projectsGrid}>
           {projects.map((project) => (
             <div key={project.name} className={styles.projectCard}>

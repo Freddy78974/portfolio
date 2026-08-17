@@ -1,45 +1,70 @@
 import styles from '../src/styles/Header.module.css';
 import useTypingEffect from '../src/hooks/useTypingEffect';
+import projects from '../src/data/projects';
 
-const TITLE_TEXT = 'Bienvenue sur mon portfolio';
-const SUBTITLE_TEXT = 'Développeur full stack\nJe m\'appelle Jean-Frédéric Nangy';
+const LINE_1 = 'jean-frederic-nangy — développeur full stack';
+const LINE_2 = '2 ans à Zone01 Normandie · dispo pour une alternance';
 
 export default function Header() {
-  const imagePath = 'assets/images/IMG_4674.jpg';
+  const pdfPath = 'assets/documents/CV.pdf';
 
   useTypingEffect([
-    { id: 'typing-effect-h1', text: TITLE_TEXT },
-    { id: 'typing-effect-h2', text: SUBTITLE_TEXT }
-  ], 40); // Vitesse légèrement réduite
+    { id: 'term-line-1', text: LINE_1 },
+    { id: 'term-line-2', text: LINE_2 }
+  ], 30);
 
   return (
     <header className={styles.header}>
-      <div className={`${styles.container} ${styles.right}`}>
-        <div className={styles.typingEffect}>
-          <h1
-          data-testid="typing-effect-h1"
-          id="typing-effect-h1"
-          className={styles.title}
-          style={{ color: 'white' }}
-          >
-            {TITLE_TEXT}
+      <div className={styles.container}>
+        <div className={styles.copy}>
+          <p className="eyebrow">disponible — recherche alternance</p>
+          <h1 className={styles.headline}>
+            Développeur full stack,<br />
+            <span className={styles.accentWord}>du terminal à la prod.</span>
           </h1>
-          <h2
-          data-testid="typing-effect-h2"
-          id="typing-effect-h2"
-          className={styles.subtitle}
-          style={{ color: 'white' }}
-          >
-            {SUBTITLE_TEXT}
-          </h2>
+          <p className={styles.sub}>
+            <strong>Jean-Frédéric Nangy</strong>, formé à Zone01 Normandie. J&apos;assemble des
+            systèmes complets : API, données, interface, déploiement.
+          </p>
+          <div className={styles.ctas}>
+            {projects.length > 0 && (
+              <a href="#projects" className={`${styles.cta} ${styles.ctaPrimary}`}>→ Voir les projets</a>
+            )}
+            <a
+              href={pdfPath}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={projects.length > 0 ? styles.cta : `${styles.cta} ${styles.ctaPrimary}`}
+            >
+              Télécharger le CV
+            </a>
+            <a href="#contact" className={styles.cta}>Me contacter</a>
+          </div>
         </div>
-        <div className={styles.profileContainer}>
-          <img
-            src={imagePath} 
-            alt="Photo de profil"
-            className={styles.profilePhoto}
-            loading="lazy"
-          />
+
+        <div className={styles.term}>
+          <div className={styles.termBar}>
+            <span className={styles.dot}></span>
+            <span className={styles.dot}></span>
+            <span className={styles.dot}></span>
+            <span className={styles.termTitle}>jean-frederic@portfolio — zsh</span>
+          </div>
+          <div className={styles.termBody}>
+            <div>
+              <span className={styles.prompt}>visiteur@portfolio ~ %</span>{' '}
+              <span className={styles.cmd}>whoami</span>
+            </div>
+            <div className={styles.out} id="term-line-1">{LINE_1}</div>
+            <div>
+              <span className={styles.prompt}>visiteur@portfolio ~ %</span>{' '}
+              <span className={styles.cmd}>cat statut.txt</span>
+            </div>
+            <div className={styles.out} id="term-line-2">{LINE_2}</div>
+            <div>
+              <span className={styles.prompt}>visiteur@portfolio ~ %</span>{' '}
+              <span className={styles.cursor}></span>
+            </div>
+          </div>
         </div>
       </div>
     </header>

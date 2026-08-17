@@ -1,0 +1,154 @@
+.profile {
+  padding: 6rem 6vw;
+}
+
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.bio :global(.eyebrow) {
+  margin: 0 0 1.5rem;
+}
+
+.title {
+  font-size: clamp(1.9rem, 3vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin: 0 0 1.5rem;
+  color: var(--text);
+}
+
+.bioText p {
+  font-size: 1.02rem;
+  line-height: 1.75;
+  color: var(--muted);
+  margin: 0 0 1.1rem;
+}
+
+.photo {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--border);
+  margin-top: 1.5rem;
+}
+
+.skillsHead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.skillsTitle {
+  font-size: clamp(1.4rem, 2vw, 1.7rem);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin: 0;
+  color: var(--text);
+}
+
+.skillsNote {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+.specGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  margin: 0;
+}
+
+.spec {
+  background: var(--bg);
+  padding: 1.25rem 1.4rem;
+}
+
+.spec dt {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 0.9rem;
+}
+
+.spec dd {
+  margin: 0;
+}
+
+.spec dd ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.spec dd li {
+  border-top: 1px solid var(--border);
+}
+
+.spec dd li:first-child {
+  border-top: none;
+}
+
+.skillItem {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.55rem 0;
+  color: var(--text);
+  text-decoration: none;
+  font-size: 0.92rem;
+  transition: var(--transition-smooth);
+}
+
+.skillItem:hover {
+  color: var(--accent);
+}
+
+.skillIcons {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  flex-shrink: 0;
+}
+
+.skillIcon {
+  width: 1.05rem;
+  height: 1.05rem;
+  color: var(--muted);
+  transition: var(--transition-smooth);
+}
+
+.skillItem:hover .skillIcon {
+  color: var(--accent);
+}
+
+@media (max-width: 900px) {
+  .profile {
+    padding: 4rem 1.25rem;
+  }
+
+  .container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .specGrid {
+    grid-template-columns: 1fr;
+  }
+}
