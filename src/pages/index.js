@@ -2,6 +2,7 @@ import Head from 'next/head';
 import Header from '../../components/Header';
 import About from '../../components/About';
 import Skills from '../../components/Skills';
+import Projects from '../../components/Projects';
 import CvSection from '../../components/CvSection';
 import ContactForm from '../../components/ContactForm';
 import Footer from '../../components/Footer';
@@ -12,14 +13,36 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Mon Portfolio | Développeur Full Stack</title>
-        <meta name="description" content="Portfolio professionnel" />
+        <title>Jean-Frédéric Nangy | Développeur Full Stack</title>
+        <meta
+          name="description"
+          content="Portfolio de Jean-Frédéric Nangy, développeur full stack : compétences, CV et contact."
+        />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="fr_FR" />
+        <meta property="og:title" content="Jean-Frédéric Nangy | Développeur Full Stack" />
+        <meta
+          property="og:description"
+          content="Portfolio de Jean-Frédéric Nangy, développeur full stack : compétences, CV et contact."
+        />
+        <meta property="og:url" content="https://freddy78974.github.io/portfolio/" />
+        <meta property="og:image" content="https://freddy78974.github.io/portfolio/assets/images/IMG_4674.jpg" />
+
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content="Jean-Frédéric Nangy | Développeur Full Stack" />
+        <meta
+          name="twitter:description"
+          content="Portfolio de Jean-Frédéric Nangy, développeur full stack : compétences, CV et contact."
+        />
+        <meta name="twitter:image" content="https://freddy78974.github.io/portfolio/assets/images/IMG_4674.jpg" />
       </Head>
 
       <Navbar />
       <Header />
       <About />
       <Skills />
+      <Projects />
       <CvSection />
       <ContactForm />
       <Footer />

@@ -1,12 +1,3 @@
-/* :root {
-  --bg-image: url('/assets/images/code-binaire.png');
-} */
-
-/* body {
-  color: white !important;
-} */
-
-/* Nouveaux styles modernes */
 :root {
   --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   --secondary-gradient: linear-gradient(135deg, #00d2ff 0%, #3a7bd5 100%);
@@ -42,60 +33,6 @@ h1, h2, h3 {
   background-clip: text;
 }
 
-/* Conservez votre fond */
-/* body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: 
-    linear-gradient(rgba(0, 0, 0, 0.7), 
-    rgba(0, 0, 0, 0.7)),
-    var(--bg-image) center/cover no-repeat;
-  z-index: -1;
-} */
-
-.backgroundOverlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
-  z-index: -1;
-}
-
-.backgroundImage {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -1;
-  opacity: 0.7; /* Pour simuler l'effet de transparence du gradient précédent */
-}
-
-.background-wrapper {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  overflow: hidden;
-}
-
-.background-image-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
 .background-fixed {
   position: fixed;
   top: 0;
@@ -104,25 +41,23 @@ h1, h2, h3 {
   height: 100vh;
   z-index: -1;
   overflow: hidden;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(102, 126, 234, 0.35) 0%, transparent 45%),
+    radial-gradient(circle at 85% 15%, rgba(0, 210, 255, 0.25) 0%, transparent 40%),
+    radial-gradient(circle at 50% 95%, rgba(118, 75, 162, 0.3) 0%, transparent 50%),
+    linear-gradient(180deg, #05060f 0%, #0a0b18 50%, #05060f 100%);
 }
 
-.background-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: brightness(0.3); /* Assombrit l'image */
-}
-
-
-/* Overlay sombre */
-.background-image-container::after {
+.background-fixed::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse at center, black 0%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse at center, black 0%, transparent 75%);
 }
 
 header {
@@ -139,28 +74,6 @@ section:not(header) {
   background-color: transparent !important;
   margin: 3rem 0 !important;
 }
-
-/* Effet glassmorphism moderne pour les sections (sauf header) - DÉSACTIVÉ POUR TEST */
-/* section:not(header)::before {
-  content: '';
-  position: absolute;
-  top: 1rem;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 90%;
-  max-width: 1200px;
-  height: calc(100% - 2rem);
-  background: var(--glass-bg);
-  backdrop-filter: blur(25px);
-  border-radius: 24px;
-  border: 1px solid var(--glass-border);
-  box-shadow: 
-    0 12px 40px rgba(31, 38, 135, 0.4),
-    inset 0 1px 0 rgba(255, 255, 255, 0.08);
-  z-index: -1;
-  opacity: 0.9;
-  transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-} */
 
 /* Bordure lumineuse animée pour les sections visibles */
 /* Container fixe pour l'effet KITT - sections et éléments spécifiques */
@@ -244,12 +157,12 @@ section:not(header) {
     from 0deg,
     transparent 0%,
     transparent 85%,
-    rgba(0, 123, 255, 0.2) 87%,
-    rgba(0, 123, 255, 0.6) 89%,
-    rgba(0, 123, 255, 1) 90%,
-    rgba(0, 123, 255, 1) 92%,
-    rgba(0, 123, 255, 0.6) 94%,
-    rgba(0, 123, 255, 0.2) 96%,
+    rgba(0, 210, 255, 0.2) 87%,
+    rgba(0, 210, 255, 0.6) 89%,
+    rgba(0, 210, 255, 1) 90%,
+    rgba(0, 210, 255, 1) 92%,
+    rgba(0, 210, 255, 0.6) 94%,
+    rgba(0, 210, 255, 0.2) 96%,
     transparent 98%,
     transparent 180deg,
     transparent 100%
@@ -268,12 +181,12 @@ section:not(header) {
     from 180deg,
     transparent 0%,
     transparent 85%,
-    rgba(255, 69, 0, 0.2) 87%,
-    rgba(255, 69, 0, 0.6) 89%,
-    rgba(255, 69, 0, 1) 90%,
-    rgba(255, 69, 0, 1) 92%,
-    rgba(255, 69, 0, 0.6) 94%,
-    rgba(255, 69, 0, 0.2) 96%,
+    rgba(118, 75, 162, 0.2) 87%,
+    rgba(118, 75, 162, 0.6) 89%,
+    rgba(118, 75, 162, 1) 90%,
+    rgba(118, 75, 162, 1) 92%,
+    rgba(118, 75, 162, 0.6) 94%,
+    rgba(118, 75, 162, 0.2) 96%,
     transparent 98%,
     transparent 100%
   );
@@ -309,16 +222,10 @@ section:not(header) {
   }
 }
 
-/* Anciens styles à supprimer */
-
-/* Anciens styles à supprimer */
-
 /* Activation de l'effet KITT quand visible - sections uniquement */
 .section-visible .kitt-border {
   opacity: 1;
 }
-
-/* Suppression des anciens styles du header */
 
 /* Élément lumineux qui tourne à l'intérieur du container fixe - pour les sections */
 /* Premier trait lumineux pour les sections - traits très longs */
@@ -332,24 +239,24 @@ section:not(header) {
     from 0deg,
     transparent 0%,
     transparent 65%,
-    rgba(0, 123, 255, 0.1) 68%,
-    rgba(0, 123, 255, 0.2) 72%,
-    rgba(0, 123, 255, 0.4) 76%,
-    rgba(0, 123, 255, 0.6) 80%,
-    rgba(0, 123, 255, 0.8) 85%,
-    rgba(0, 123, 255, 1) 90%,
-    rgba(0, 123, 255, 1) 92%,
-    rgba(0, 123, 255, 0.8) 95%,
-    rgba(0, 123, 255, 0.6) 98%,
-    rgba(0, 123, 255, 0.4) 99%,
-    rgba(0, 123, 255, 0.2) 99.5%,
+    rgba(0, 210, 255, 0.1) 68%,
+    rgba(0, 210, 255, 0.2) 72%,
+    rgba(0, 210, 255, 0.4) 76%,
+    rgba(0, 210, 255, 0.6) 80%,
+    rgba(0, 210, 255, 0.8) 85%,
+    rgba(0, 210, 255, 1) 90%,
+    rgba(0, 210, 255, 1) 92%,
+    rgba(0, 210, 255, 0.8) 95%,
+    rgba(0, 210, 255, 0.6) 98%,
+    rgba(0, 210, 255, 0.4) 99%,
+    rgba(0, 210, 255, 0.2) 99.5%,
     transparent 100%
   );
   animation: kittSpin 3s linear infinite;
 }
 
 /* Deuxième trait lumineux pour les sections - traits très longs */
-/* .kitt-light-section-2 {
+.kitt-light-section-2 {
   position: absolute;
   top: -100%;
   left: -100%;
@@ -359,21 +266,21 @@ section:not(header) {
     from 180deg,
     transparent 0%,
     transparent 65%,
-    rgba(255, 69, 0, 0.1) 68%,
-    rgba(255, 69, 0, 0.2) 72%,
-    rgba(255, 69, 0, 0.4) 76%,
-    rgba(255, 69, 0, 0.6) 80%,
-    rgba(255, 69, 0, 0.8) 85%,
-    rgba(255, 69, 0, 1) 90%,
-    rgba(255, 69, 0, 1) 92%,
-    rgba(255, 69, 0, 0.8) 95%,
-    rgba(255, 69, 0, 0.6) 98%,
-    rgba(255, 69, 0, 0.4) 99%,
-    rgba(255, 69, 0, 0.2) 99.5%,
+    rgba(118, 75, 162, 0.1) 68%,
+    rgba(118, 75, 162, 0.2) 72%,
+    rgba(118, 75, 162, 0.4) 76%,
+    rgba(118, 75, 162, 0.6) 80%,
+    rgba(118, 75, 162, 0.8) 85%,
+    rgba(118, 75, 162, 1) 90%,
+    rgba(118, 75, 162, 1) 92%,
+    rgba(118, 75, 162, 0.8) 95%,
+    rgba(118, 75, 162, 0.6) 98%,
+    rgba(118, 75, 162, 0.4) 99%,
+    rgba(118, 75, 162, 0.2) 99.5%,
     transparent 100%
   );
   animation: kittSpin 3s linear infinite;
-} */
+}
 
 /* Animation fluide pour les sections - rotation uniquement de l'élément lumineux */
 @keyframes kittSpin {
@@ -384,14 +291,6 @@ section:not(header) {
     transform: rotate(360deg);
   }
 }
-
-/* Effet supplémentaire sur la carte glassmorphism quand visible - DÉSACTIVÉ POUR TEST */
-/* section.section-visible:not(header)::before {
-  box-shadow: 
-    0 12px 40px rgba(31, 38, 135, 0.4),
-    inset 0 1px 0 rgba(255, 255, 255, 0.08),
-    0 0 60px rgba(0, 216, 255, 0.15);
-} */
 
 /* Première et dernière section sans marge */
 section:first-of-type:not(header) {
