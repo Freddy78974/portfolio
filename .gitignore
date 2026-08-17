@@ -102,6 +102,9 @@ out/
 # TypeScript
 *.tsbuildinfo
 
+# Fichiers locaux non destinés au dépôt
+github-profile-README.md
+
 # Exceptions (à garder)
 !.env.example
 !.env.template
