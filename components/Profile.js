@@ -10,9 +10,11 @@ import {
   SiPython,
   SiMysql,
   SiDocker,
-  SiGit
+  SiGit,
+  SiClaude
 } from 'react-icons/si';
 import { VscVscode } from 'react-icons/vsc';
+import { RiOpenaiFill } from 'react-icons/ri';
 
 const skillCategories = [
   {
@@ -43,7 +45,9 @@ const skillCategories = [
     skills: [
       { name: 'VsCode', url: 'https://code.visualstudio.com/', icons: [VscVscode] },
       { name: 'Docker', url: 'https://www.docker.com/', icons: [SiDocker] },
-      { name: 'Git', url: 'https://git-scm.com/', icons: [SiGit] }
+      { name: 'Git', url: 'https://git-scm.com/', icons: [SiGit] },
+      { name: 'ChatGPT', url: 'https://chatgpt.com/', icons: [RiOpenaiFill] },
+      { name: 'Claude', url: 'https://claude.com/', icons: [SiClaude] }
     ]
   }
 ];
@@ -58,7 +62,7 @@ export default function Profile() {
           <div className={styles.bioText}>
             <p>Développeur full stack passionné par la création de projets divers.</p>
             <p>J&apos;ai toujours été intéressé par les ordinateurs et la programmation.</p>
-            <p>J&apos;ai commencé à coder il y a 2 ans en intégrant l&apos;école Zone01 Normandie, et j&apos;ai travaillé sur de nombreux projets depuis.</p>
+            <p>J&apos;ai commencé à coder en intégrant l&apos;école Zone01 Normandie, et j&apos;ai travaillé sur de nombreux projets depuis.</p>
             <p>Je sais m&apos;adapter à différents langages de programmation, aussi bien en back-end qu&apos;en front-end.</p>
           </div>
           <img
@@ -72,7 +76,7 @@ export default function Profile() {
         <div id="skills" className={styles.skills}>
           <div className={styles.skillsHead}>
             <h3 className={styles.skillsTitle}>Compétences</h3>
-            <span className={styles.skillsNote}>11 technologies · classées par usage</span>
+            <span className={styles.skillsNote}>13 technologies · classées par usage</span>
           </div>
           <dl className={styles.specGrid}>
             {skillCategories.map((category) => (

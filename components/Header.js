@@ -3,7 +3,7 @@ import useTypingEffect from '../src/hooks/useTypingEffect';
 import projects from '../src/data/projects';
 
 const LINE_1 = 'jean-frederic-nangy — développeur full stack';
-const LINE_2 = '2 ans à Zone01 Normandie · dispo pour une alternance';
+const LINE_2 = 'formé à Zone01 Normandie · disponible pour de nouveaux projets';
 
 export default function Header() {
   const pdfPath = 'assets/documents/CV.pdf';
@@ -17,7 +17,7 @@ export default function Header() {
     <header className={styles.header}>
       <div className={styles.container}>
         <div className={styles.copy}>
-          <p className="eyebrow">disponible — recherche alternance</p>
+          <p className="eyebrow">disponible pour de nouveaux projets</p>
           <h1 className={styles.headline}>
             Développeur full stack,<br />
             <span className={styles.accentWord}>du terminal à la prod.</span>

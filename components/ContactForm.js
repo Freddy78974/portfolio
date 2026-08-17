@@ -33,7 +33,7 @@ export default function ContactForm() {
           <p className="eyebrow">prochaine étape</p>
           <h2 className={styles.title}>Contactez-moi</h2>
           <p className={styles.introText}>
-            Envoyez-moi un message pour discuter de collaborations, d&apos;une alternance,
+            Envoyez-moi un message pour discuter de collaborations, d&apos;une opportunité,
             ou simplement pour dire bonjour.
           </p>
           <a href={pdfPath} target="_blank" rel="noopener noreferrer" className={styles.cvLink}>
