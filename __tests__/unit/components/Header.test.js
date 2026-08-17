@@ -6,7 +6,7 @@ jest.mock('../../../src/styles/Header.module.css', () => ({}));
 describe('Header Component', () => {
   it('renders the main headline', () => {
     render(<Header />);
-    expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent('Développeur full stack');
+    expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent('Concevoir des systèmes');
   });
 
   it('renders the terminal panel', () => {

@@ -136,6 +136,45 @@
   color: var(--accent);
 }
 
+.learning {
+  margin-top: 2rem;
+}
+
+.learningTitle {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 1rem;
+}
+
+.learningList {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 0;
+  padding: 0;
+}
+
+.learningChip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.4rem 0.85rem;
+  border: 1px dashed var(--border);
+  border-radius: 999px;
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+
+.learningIcon {
+  width: 0.9rem;
+  height: 0.9rem;
+  color: var(--muted);
+}
+
 @media (max-width: 900px) {
   .profile {
     padding: 4rem 1.25rem;

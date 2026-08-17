@@ -11,27 +11,27 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Jean-Frédéric Nangy | Développeur Full Stack</title>
+        <title>Jean-Frédéric Nangy | Software & AI Solution Design</title>
         <meta
           name="description"
-          content="Portfolio de Jean-Frédéric Nangy, développeur full stack : compétences, CV et contact."
+          content="Portfolio de Jean-Frédéric Nangy : architecture logicielle, ingénierie assistée par IA et conception de produits numériques."
         />
 
         <meta property="og:type" content="website" />
         <meta property="og:locale" content="fr_FR" />
-        <meta property="og:title" content="Jean-Frédéric Nangy | Développeur Full Stack" />
+        <meta property="og:title" content="Jean-Frédéric Nangy | Software & AI Solution Design" />
         <meta
           property="og:description"
-          content="Portfolio de Jean-Frédéric Nangy, développeur full stack : compétences, CV et contact."
+          content="Portfolio de Jean-Frédéric Nangy : architecture logicielle, ingénierie assistée par IA et conception de produits numériques."
         />
         <meta property="og:url" content="https://freddy78974.github.io/portfolio/" />
         <meta property="og:image" content="https://freddy78974.github.io/portfolio/assets/images/IMG_4674.jpg" />
 
         <meta name="twitter:card" content="summary" />
-        <meta name="twitter:title" content="Jean-Frédéric Nangy | Développeur Full Stack" />
+        <meta name="twitter:title" content="Jean-Frédéric Nangy | Software & AI Solution Design" />
         <meta
           name="twitter:description"
-          content="Portfolio de Jean-Frédéric Nangy, développeur full stack : compétences, CV et contact."
+          content="Portfolio de Jean-Frédéric Nangy : architecture logicielle, ingénierie assistée par IA et conception de produits numériques."
         />
         <meta name="twitter:image" content="https://freddy78974.github.io/portfolio/assets/images/IMG_4674.jpg" />
       </Head>

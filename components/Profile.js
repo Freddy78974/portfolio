@@ -1,55 +1,76 @@
 import styles from '../src/styles/Profile.module.css';
 import {
-  SiHtml5,
-  SiCss,
-  SiJavascript,
   SiNodedotjs,
-  SiNextdotjs,
-  SiGo,
-  SiRust,
-  SiPython,
-  SiMysql,
-  SiDocker,
+  SiTypescript,
   SiGit,
-  SiClaude
+  SiGithub,
+  SiClaude,
+  SiFlutter,
+  SiFirebase,
+  SiPwa,
+  SiPostgresql,
+  SiRedis,
+  SiGithubactions,
+  SiCloudflare,
+  SiLinux,
+  SiPython,
+  SiTensorflow,
+  SiPytorch,
+  SiApachekafka,
+  SiApachespark,
+  SiApacheairflow,
+  SiDocker,
+  SiKalilinux
 } from 'react-icons/si';
-import { VscVscode } from 'react-icons/vsc';
 import { RiOpenaiFill } from 'react-icons/ri';
 
 const skillCategories = [
   {
-    label: 'Front-end',
-    skills: [
-      { name: 'HTML & CSS', url: 'https://developer.mozilla.org/', icons: [SiHtml5, SiCss] },
-      { name: 'JavaScript', url: 'https://developer.mozilla.org/fr/docs/Web/JavaScript', icons: [SiJavascript] },
-      { name: 'Next.js', url: 'https://nextjs.org/', icons: [SiNextdotjs] }
-    ]
-  },
-  {
-    label: 'Back-end',
+    label: 'Architecture & Backend',
     skills: [
       { name: 'Node.js', url: 'https://nodejs.org/', icons: [SiNodedotjs] },
-      { name: 'Golang', url: 'https://go.dev/', icons: [SiGo] },
-      { name: 'Rust', url: 'https://www.rust-lang.org/', icons: [SiRust] },
-      { name: 'Python', url: 'https://www.python.org/', icons: [SiPython] }
-    ]
-  },
-  {
-    label: 'Données',
-    skills: [
-      { name: 'SQL', url: 'https://sql.sh/', icons: [SiMysql] }
-    ]
-  },
-  {
-    label: 'Outils',
-    skills: [
-      { name: 'VsCode', url: 'https://code.visualstudio.com/', icons: [VscVscode] },
-      { name: 'Docker', url: 'https://www.docker.com/', icons: [SiDocker] },
+      { name: 'TypeScript', url: 'https://www.typescriptlang.org/', icons: [SiTypescript] },
       { name: 'Git', url: 'https://git-scm.com/', icons: [SiGit] },
-      { name: 'ChatGPT', url: 'https://chatgpt.com/', icons: [RiOpenaiFill] },
-      { name: 'Claude', url: 'https://claude.com/', icons: [SiClaude] }
+      { name: 'GitHub', url: 'https://github.com/', icons: [SiGithub] }
+    ]
+  },
+  {
+    label: 'IA & ingénierie assistée',
+    skills: [
+      { name: 'Claude Code', url: 'https://claude.com/claude-code', icons: [SiClaude] },
+      { name: 'ChatGPT', url: 'https://chatgpt.com/', icons: [RiOpenaiFill] }
+    ]
+  },
+  {
+    label: 'Produit multiplateforme',
+    skills: [
+      { name: 'Flutter', url: 'https://flutter.dev/', icons: [SiFlutter] },
+      { name: 'Firebase', url: 'https://firebase.google.com/', icons: [SiFirebase] },
+      { name: 'PWA', url: 'https://developer.mozilla.org/fr/docs/Web/Progressive_web_apps', icons: [SiPwa] }
+    ]
+  },
+  {
+    label: 'Infrastructure & données',
+    skills: [
+      { name: 'PostgreSQL', url: 'https://www.postgresql.org/', icons: [SiPostgresql] },
+      { name: 'Redis', url: 'https://redis.io/', icons: [SiRedis] },
+      { name: 'GitHub Actions', url: 'https://github.com/features/actions', icons: [SiGithubactions] },
+      { name: 'Cloudflare R2', url: 'https://www.cloudflare.com/developer-platform/products/r2/', icons: [SiCloudflare] },
+      { name: 'Linux', url: 'https://www.linux.org/', icons: [SiLinux] }
     ]
   }
+];
+
+const learning = [
+  { name: 'Python', icons: [SiPython] },
+  { name: 'Machine Learning', icons: [] },
+  { name: 'TensorFlow', icons: [SiTensorflow] },
+  { name: 'PyTorch', icons: [SiPytorch] },
+  { name: 'Apache Kafka', icons: [SiApachekafka] },
+  { name: 'Apache Spark', icons: [SiApachespark] },
+  { name: 'Apache Airflow', icons: [SiApacheairflow] },
+  { name: 'Docker', icons: [SiDocker] },
+  { name: 'Cybersécurité (fondamentaux)', icons: [SiKalilinux] }
 ];
 
 export default function Profile() {
@@ -60,10 +81,10 @@ export default function Profile() {
           <p className="eyebrow">qui suis-je ?</p>
           <h2 className={styles.title}>Jean-Frédéric Nangy</h2>
           <div className={styles.bioText}>
-            <p>Développeur full stack passionné par la création de projets divers.</p>
-            <p>J&apos;ai toujours été intéressé par les ordinateurs et la programmation.</p>
-            <p>J&apos;ai commencé à coder en intégrant l&apos;école Zone01 Normandie, et j&apos;ai travaillé sur de nombreux projets depuis.</p>
-            <p>Je sais m&apos;adapter à différents langages de programmation, aussi bien en back-end qu&apos;en front-end.</p>
+            <p>Je me situe à l&apos;intersection de la conception de logiciels, de l&apos;architecture logicielle, du design de produits numériques et de l&apos;intelligence artificielle.</p>
+            <p>Je pars d&apos;un besoin, je conçois une solution, je définis son architecture, puis je conduis son développement avec l&apos;aide d&apos;outils d&apos;IA comme Claude Code — utilisés comme de véritables outils d&apos;ingénierie, pas seulement pour générer du code.</p>
+            <p>Formé à Zone01 Normandie, j&apos;ai travaillé sur plusieurs projets concrets : de la conception d&apos;une architecture modulaire à la mise en production d&apos;applications multiplateformes.</p>
+            <p>Je documente mes décisions techniques et je reste honnête sur mon niveau : certaines compétences sont maîtrisées, d&apos;autres encore en cours d&apos;apprentissage.</p>
           </div>
           <img
             src="assets/images/IMG_4674.jpg"
@@ -76,7 +97,7 @@ export default function Profile() {
         <div id="skills" className={styles.skills}>
           <div className={styles.skillsHead}>
             <h3 className={styles.skillsTitle}>Compétences</h3>
-            <span className={styles.skillsNote}>13 technologies · classées par usage</span>
+            <span className={styles.skillsNote}>par domaine de pratique</span>
           </div>
           <dl className={styles.specGrid}>
             {skillCategories.map((category) => (
@@ -107,6 +128,20 @@ export default function Profile() {
               </div>
             ))}
           </dl>
+
+          <div className={styles.learning}>
+            <h4 className={styles.learningTitle}>En cours d&apos;apprentissage</h4>
+            <ul className={styles.learningList}>
+              {learning.map((item) => (
+                <li key={item.name} className={styles.learningChip}>
+                  {item.icons.map((Icon, i) => (
+                    <Icon key={i} className={styles.learningIcon} aria-hidden="true" />
+                  ))}
+                  <span>{item.name}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
     </section>

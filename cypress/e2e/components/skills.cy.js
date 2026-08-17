@@ -3,7 +3,7 @@ describe('Liens des Compétences', () => {
         cy.visit('/#skills');
 
         cy.get('[data-testid="skill-item"]')
-            .should('have.attr', 'href', 'https://developer.mozilla.org/')
+            .should('have.attr', 'href', 'https://nodejs.org/')
             .and('have.attr', 'target', '_blank');
     });
 });

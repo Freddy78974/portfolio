@@ -6,7 +6,7 @@ describe('Navigation Portfolio', () => {
     it('Doit naviguer vers la section Profil', () => {
         cy.get('nav a[href="#profil"]').click();
         cy.get('#profil').should('be.visible');
-        cy.contains('HTML & CSS').should('exist');
+        cy.contains('Node.js').should('exist');
     });
 
     it('Doit ouvrir le formulaire de contact', () => {

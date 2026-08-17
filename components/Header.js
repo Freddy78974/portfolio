@@ -2,8 +2,8 @@ import styles from '../src/styles/Header.module.css';
 import useTypingEffect from '../src/hooks/useTypingEffect';
 import projects from '../src/data/projects';
 
-const LINE_1 = 'jean-frederic-nangy — développeur full stack';
-const LINE_2 = 'formé à Zone01 Normandie · disponible pour de nouveaux projets';
+const LINE_1 = 'jean-frederic-nangy — software & ai solution design';
+const LINE_2 = 'architecture logicielle · ia appliquée · conception produit';
 
 export default function Header() {
   const pdfPath = 'assets/documents/CV.pdf';
@@ -19,12 +19,12 @@ export default function Header() {
         <div className={styles.copy}>
           <p className="eyebrow">disponible pour de nouveaux projets</p>
           <h1 className={styles.headline}>
-            Développeur full stack,<br />
-            <span className={styles.accentWord}>du terminal à la prod.</span>
+            Concevoir des systèmes,<br />
+            <span className={styles.accentWord}>les construire avec l&apos;IA.</span>
           </h1>
           <p className={styles.sub}>
-            <strong>Jean-Frédéric Nangy</strong>, formé à Zone01 Normandie. J&apos;assemble des
-            systèmes complets : API, données, interface, déploiement.
+            <strong>Jean-Frédéric Nangy</strong> — conception d&apos;architectures logicielles,
+            développement assisté par IA et design de produits numériques. Formé à Zone01 Normandie.
           </p>
           <div className={styles.ctas}>
             {projects.length > 0 && (
