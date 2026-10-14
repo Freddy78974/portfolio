@@ -4,7 +4,6 @@ import { HiArrowUp } from 'react-icons/hi2';
 
 const Footer = () => {
   const githubIconPath = 'assets/images/github-mark-white.png';
-  const giteaIconPath = 'assets/images/Gitea-Logo.wine.png';
   return (
     <footer className={styles.footer}>
       <div className={styles.footerContent}>
@@ -21,19 +20,6 @@ const Footer = () => {
               className={styles.socialIcon}
             />
             GitHub
-          </a>
-          <a
-            href="https://zone01normandie.org/git/njeanfre"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.socialLink}
-          >
-            <img
-              src={giteaIconPath}
-              alt="Gitea"
-              className={styles.socialIcon}
-            />
-            Gitea
           </a>
           <a
             href="mailto:nangy.pro@gmail.com"
